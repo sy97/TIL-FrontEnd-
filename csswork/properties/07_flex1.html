@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: royalblue;
+            display: flex; 
+            /*flex로 바꾸면 수평정렬, inline-flex로 바꾸면 최대한 줄어드려는속성*/
+            /*flex-direction: row;*/ 
+            /* row-reverse 오른쪽으로 이동도 되고 3,2,1로 순서 바뀜, 시작점과 끝점이바뀜*/
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;  
+        }
+
+        .container .item {
+            width: 100px;
+            height: 100px;
+            border: 3px dashed red;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>

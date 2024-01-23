@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {color: red !important}/* 태그: 1점, !important는 치트키. 무한대 */
+        #color_yellow {color:yellow} /* id: 100점 */
+        .color_green {color: green;}/* class: 100점*/
+        div {color: purple;} /* 태그 : 1점 - 태그가 두개일 땐 마지막 태그가 적용*/
+        * {color: cornflowerblue;}/* 전체: 0점 */
+        body {color:violet} /* 상속: 0점 */
+    </style>
+</head>
+<body>
+    <div id="color_yellow"
+            class="color_green"
+                style="color:orange";>helloworld</div> 
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+        .wrap {
+            width: 400px;
+            height: 300px;
+            background-color: coral;
+            position: relative;
+            /*위치상 부모됨*/
+        }
+        .container {
+            width: 300px;
+            background-color: cornflowerblue;
+            /*position: relative; 자식을 배치하기 위해 스스로 기준이 되어야함 */
+            
+        }
+
+        .container .item {
+            border: 4px dashed blue;
+            background-color: orange;
+        }
+
+        .container .item:nth-child(1) {
+            width: 100px;
+            height: 100px;
+        }
+
+        .container .item:nth-child(2) {
+            width: 140px;
+            height: 70px;
+
+            /* relative */
+            /*position: relative;
+            top: 30px;
+            left: 60px; */ 
+            /*relative 이므로 자기가있던 자리에서 이만큼 이동
+            이동하고나서 원래 자리는 비어있는 것처럼 보이지만 사실 원래 상자가 자리잡고 있는거*/
+            
+            /* absoulte */
+            /*position: absolute;*/
+            /*부모를 기준 삼음, 일반적으로 많이 사용.빈공간이 안생김*/ 
+            bottom: 10px;
+            right: 10px; 
+            /*이렇게 했을 때 위치가 페이지 오른쪽 하단으로 내려감. absolute는 위치상 부모기준이기때문*/
+            /*구조적 부모는 container지만, container가 기준이 없으므로 부모 안에 위치되지않는것*/
+            
+            /* fixed */
+            position: fixed;
+            /* viewport기준이므로 페이지 오른쪽 하단에 위치됨*/
+        }
+
+        .container .item:nth-child(3) {
+            width: 70px;
+            height: 120px;
+        }
+
+        span {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: yellow;
+            display: flex;
+        }
+
+        .container .item {
+            background-color: green;
+            margin: 10px;
+            border: 4px solid black;
+            flex-basis: 150px;
+        }
+
+        .container .item:nth-child(1) {
+            flex-shrink: 1;
+            width: 100px;
+        }
+
+        .container .item:nth-child(2) {
+            flex-grow: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">AAA</div>
+        <div class="item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, sunt.</div>
+    </div>
+</body>
+</html>

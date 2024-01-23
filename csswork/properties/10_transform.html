@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 100px;
+        }
+
+        .container {
+            width: 200px;
+            height: 100px;
+            background-color: royalblue;
+            perspective: 500px  /*관찰 대상이므로 속성 perspective, 함수가아님 */
+        }
+        
+        .container .item {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transform: rotateY(45deg);/*여기에 원근을 안준다면 부모에 속성perspective작성해주면됨*/
+
+            /* 이동 */
+            /*transform: translate(40px,30px);*/
+            /*transform: translateX(50px); x축으로만 이동*/
+            /*transform: translateY(100px); y축으로만 이동*/
+
+            /* 크기 */
+            /*transform: scale(0.5,0.5);*/
+
+            /* 회전 기능 */
+            /*transform: rotate(45deg);*/
+            /*transform: perspective(500px) rotateX(45deg) rotateY(45deg);*/
+
+            /*기울임*/
+            /*transform: skewX(-45deg);*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">AB</div>
+    </div> 
+</body>
+</html>

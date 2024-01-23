@@ -1,0 +1,46 @@
+
+body {
+    background-image: url(/images/bg.jpg);
+}
+
+/*수평정렬*/
+.container .heroes {
+    display:flex;
+    
+    /*이미지 안깨지게 랩핑, 부모속성*/
+
+    flex-wrap: wrap; 
+    /*수평 가운데 정렬, 부모속성*/
+    justify-content: center;
+    /*background-color: coral;*/
+
+    /*늘려도 어느정도 한계 설정*/
+    max-width: 700px;
+    
+    /*영웅 뭉태기 가운데로 설정*/
+    /* 두개 할 때는, 위아래 / 좌우 */
+    /*margin은 가로 사이즈가 있을 때만 가능*/
+    margin: 0 auto; 
+    
+}
+
+
+.container .heroes .hero {
+    width: 80px;
+    height: 84px;
+    background-color: gray;
+    margin: 4px;
+    border: 3px solid white;
+    transform: skewX(-14deg);
+    border-radius: 10px;
+    transition: 0.5s;
+
+    /*마진, 테두리 다 합쳐도 원래크기 고정*/
+    box-sizing: border-box;
+    
+}
+
+.container .heroes .hero:hover {
+    width: 100px;
+    height: 100px;
+}

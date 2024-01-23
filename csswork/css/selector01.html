@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> /*html과 상관없는 css문법, 주석도 css 방식*/
+        * {color: chocolate; font-size:20px;}
+        .winter {color: red; 
+                font-size: 30px;
+                font-weight: 600;} /*.클래스명 */ /*글자를 한개한개 따로는 못하나?*/
+        
+        #summer {color: blue;
+                font-size: 16pt;
+                font-family: 궁서;}        
+    </style>
+</head>
+<body>
+    <h1 class="winter"> 현재 디자인이 적용될 문장</h1> <!--winter라는 디자인을 적용하겠다는 뜻. 만드는건 style태그 안에--> 
+    <span class="winter">안녕하세요, 강소영님</span>
+    <h1 id="summer">여기도 같은 디자인으로 적용될 부분</h1>
+    아무 디자인도 적용되지 않는 문장   
+    <div id="summer">내용</div>
+</body>
+</html>

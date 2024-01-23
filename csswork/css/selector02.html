@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 일치 선택자 */
+        /* span 태그에 있는 오렌지만 디자인을 입히고싶다 */
+         span.orange {color: orangered;} /*-> .orangespan 으로 쓰면 문제가 생길수도있음 */
+
+        /*자식 선택자 */
+        /*<ul>의 자식 <li>중 오렌지에 디자인 입히고싶다 */
+        /*ul > .orange {color:orangered;} */
+
+        /*하위 선택자*/
+        /* div .orange {color: orangered;} */
+
+        /*인접 형제 선택자: 망고만 선택*/
+        /*.orange + li {color: cornflowerblue;} */
+        
+        /*일반 형제 선택자: 망고, 청포도 모두 선택*/
+        /*.orange ~ li {font-size:20px;}*/
+
+
+        
+    </style>
+
+
+</head>
+<body>
+    <div>
+        <ul>
+            <li>샤인머스캣</li>
+            <li>한라봉</li>
+            <li class="orange">오렌지</li>
+            <li>망고</li>
+            <li>청포도</li>
+        </ul>
+        <div>당근</div>
+        <div>토마토</div>
+        <span class="orange">오렌지</span>
+    </div>
+    <span class="orange">오렌지</span>
+</body>
+</html>

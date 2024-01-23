@@ -1,0 +1,13 @@
+/*주석은 자바랑 똑같다 */
+/*여기에는 html 문법은 사용 못함*/
+
+/* 다른 css를 추가할 때*/
+@import url("box.css");
+
+h1{color: brown; 
+    font-size: 20pt; 
+    font-family: 궁서;}
+ 
+span{background-color: coral;}
+body{color: blue;}  
+

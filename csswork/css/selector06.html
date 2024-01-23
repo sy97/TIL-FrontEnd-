@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /*속성 선택자*/
+    /* [type] {background-color: cornflowerblue;} -> 별로 효용가치가없음.*/
+
+    [type="text"] {background-color: cornflowerblue;} /*같은 요소가 많을 수 있기 때문에, 속성=값 으로 많이사용*/
+    [type="password"] {background-color: coral;}
+    [date-fruits-name] {color: blue;} /*이럴 때는 겹치는 요소가 없어서 속성이름만 적어줘도됨*/
+ 
+</style>
+</head>
+<body>
+    <input type="text" /><br><br>
+    <input type="password" /><br><br>
+    <span date-fruits-name="apple">사과</span> <!--프로그램에서 임의로 속성을 만들수있는 date- 를 사용할 수 있다.-->
+    
+</body>
+</html>

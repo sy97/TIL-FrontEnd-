@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*box-sizing*/
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+
+        .item:first-child {
+            /* width: 52px;
+            height: 52px; 위아래 똑같이 맞추려면 이렇게 일일히 계산해서 맞춰줘야함*/
+            border: 4px solid brown;
+            padding: 20px; 
+            box-sizing: border-box; /*자동으로 크기가 원래크기로 맞춰짐*/ 
+            /*content-box; 기본값 */
+        }
+
+        /*overflow*/
+        .parent {
+            width: 200px;
+            height: 150px;
+            background-color: royalblue;
+            overflow: auto;
+            /*scroll쓰면 필요없는 세로 스크롤까지 생김*/
+            
+        }
+
+        /*opacity*/
+        .child {
+            /* width:auto , 부모 범위 안에서 자동계산 */
+            height: 50px;
+            background-color: palevioletred;
+            width: 300px; /*overflow*/
+            margin:20px;
+            opacity: 0.5;
+        }
+
+        /*display*/
+        span {
+            background-color: orangered;
+            color: #FFF;
+            /*width: 120px;
+            height: 30px; 안먹힘
+            근데 꼭 크기를 조절하고 싶으면, display를 block으로 조정해줘야함*/
+            display:block;
+            width: 120px;
+            height: 30px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!--box sizing-->
+    <div class="item"></div>
+    <div class="item"></div>
+    
+    <hr/>
+    <!--overflow-->
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <hr/>
+    <!--display-->
+    <span>hello world</span>
+
+</body>
+</html>

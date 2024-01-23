@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div>
+    <table border="1"><!--프로그램 세계에서는 행먼저, border는 테두리-->
+        <tr><!--테이블 안에 하나의 행 생성-->
+            <td>강</td>
+            <td>소</td>
+            <td>영</td>
+            <td>!</td> <!--td(table describe=실제 값은 td안에 넣어야함)로 열 생성--> 
+        </tr>
+        <tr>
+            <td>가</td>
+            <td>나</td>
+            <td>다</td>
+            <td><img src="./images/duke_box.gif" /></td> 
+        </tr>
+    </table>
+    <hr/> <!--구분선-->
+    <table border="1"><!--3행4열-->
+        <tr>
+            <td rowspan="2">가</td><!--2행1열과 합치는 태그. 2행 1열은 지워줘야함-->
+            <td>나</td>
+            <td colspan="2">다</td>
+            <!--<td>라</td>-->
+        </tr>
+        <tr>
+            <!--<td>마</td>-->
+            <td>바</td>
+            <td>사</td>
+            <td>아</td>
+        </tr>
+        <tr>
+            <td>자</td>
+            <td>차</td>
+            <td>카</td>
+            <td>타</td>
+        </tr>
+    </table>
+    <hr/>
+
+    <div style="background-color: cornflowerblue;">내용</div> <!--영역잡아주는 태그, 영역 설정 따로 안하면 행 하나가 div, 높이는 글자의 내용만큼-->
+    <span style="background-color: darkslategrey;">내용</span> <!--내용만큼만 영역잡힘-->
+
+    <!--span태그 사용 안하면 테이블 태그 사용해서 번거롭게 만들어야함-->
+    <table style="width:100%"> <!--화면크기와 상관없이 항상 100 % 의 비율 유지-->
+        <tr>
+            <td style="background-color: indianred;">내용</td>
+        </tr>
+    </table>
+    <hr/>
+    <!--테이블보다 더 간결, 테이블보다 유지보수도 쉬움-->
+    <div style="background-color: darkslateblue; width:300px;  height:100px;">내용</div> 
+    <div style="background-color: rgb(54, 117, 78); width:300px;  height:100px;">내용</div> 
+
+    <div> <!--두 div 하나로 합침, 겉으로는 똑같지만 코드 볼 때 편리-->
+        <div style="background-color: darkslateblue; width:300px; height:100px;">내용</div> 
+        <div style="background-color: rgb(54, 117, 78); width:300px;  height:100px;">내용</div> 
+    </div>   
+
+    <div style="margin-top: 20px;"><!--위의 블럭과 떨어트리고싶을 때-->
+        <div style="background-color: darkslateblue; 
+        width:300px; height:100px; ">내용</div> 
+        <div style="background-color: rgb(54, 117, 78); 
+        width:300px;  height:100px;">내용</div> 
+    </div>   
+    <hr />
+
+    <div style="background-color: rgb(230, 238, 121); 
+        width:300px;  height:100px; float:left;">내용</div> <!--왜 left인걸까-->
+    <div style="background-color: rgb(167, 101, 187); 
+        width:300px;  height:100px; float:left">내용</div>   
+     
+     <div style="clear:both"></div><!--위의 두 블럭이 float의 영향을 받아 떠다니니까, 그 효과를 없애주기 위함. 보통 both를 선택함-->
+     
+     <div style="margin-top: 20px;">
+        <div style="background-color: darkslateblue; 
+            width:300px; height:100px; ">내용</div> 
+        <div style="background-color: rgb(54, 117, 78); 
+            width:300px;  height:100px;">내용</div> 
+    </div>   
+    <hr />
+
+    <div style="width: 600px; background-color: gainsboro;">
+        <div style="background-color: rgb(252, 185, 205); 
+            height: 50px;">상단메뉴</div> <!--폭은 상위 div에서 설정해놨기 때문에 따로 설정안해도 600px-->    
+
+        <div style="margin-top: 10px;">
+            <div style="background-color: rgb(58, 24, 24); 
+                width: 90px; height: 800px; float: left; margin-right: 10px;">왼쪽사이드메뉴</div>
+            <div style="background-color: rgb(252, 163, 130);
+                width: 500px; height: 800px; float: left;">컨텐츠영역</div>    
+        </div>
+        <div style="clear:both"></div>
+        <div style="margin-top: 10px;">
+            <div style="background-color: rgb(212, 139, 176); 
+                width: 600px; height: 50px;">하단메뉴</div>
+        </div>
+    </div>
+
+</body>
+</html>

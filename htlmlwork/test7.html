@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form><!--실제 서버로 전송해주기 위해서는 반드시 form으로 묶어줘야함-->
+        <!--문자열 입력(id, pw, ad, post etc.)-->
+        <input type="text" size="30" maxlength="15" disabled="disabled"><br><br><!--텍스트 박스-->
+        <input type="text" size="15" readonly="readonly"><br><br><!--readonly도 입력못하게 막아주는 기능-->
+        <input type="text" value="여기에 아이디를 입력하세요" /><br><br>
+        <input type="text" placeholder="여기에 아이디를 입력하세요" /> <br><br>
+        <input type="password" /><br><br> <!--password 사용만을위한 태그-->
+        <textarea rows="3" cols="40"></textarea><!--중간에 내용이 없음. 하지만 끝태그까지 적어줘야함-->
+        <input type="button"><br><br>
+
+        <hr/>
+
+        <!--선택에 따른 입력-->
+        <!--단일선택-->
+        <input type="radio" name="gender" /> 남자 / 
+        <input type="radio" name="gender">여자
+        <br><br>
+
+    
+        <!--다중선택-->
+        <input type="checkbox" name="hobby" id="c1"/><label for ="c1">낚시</label><br> <!--글자선택할 때도 체크버튼 눌려지게 하기위함-->
+        <input type="checkbox" name="hobby">클라이밍<br>    
+        <input type="checkbox" name="hobby">수영<br>
+        <input type="checkbox" name="hobby">헬스<br>
+
+        <!--단일,다중 혼합-->
+        <select>
+            <option>서울</option>
+            <option>인천</option>
+            <option>수원</option><br>
+            <option selected=""selected>경기</option> <!--리스트 맨 위로 올리기-->
+
+
+        </select>
+        <br><br>
+        <select size="4" multiple="multiple"><!--리스트 내 항목 모두 보여줌, 멀티플은 ctrl이나 shift누르면 다중선택가능-->
+            <option>서울</option>
+            <option>인천</option>
+            <option>수원</option><br>
+            <option selected=""selected>경기</option> 
+        </select>
+
+        <br><br>
+        <!--버튼-->
+        <input type="button" value="기본 버튼"/><br><br><!--버튼 눌렀을 때 무언가 동작하게 만들고싶으면 프로그래밍해야됨-->
+        <input type="image" src="./images/duke_flip.gif"/><br><br><!--이미지를 버튼처럼사용-->
+        <input type="submit" value="서버로 전송"/><br><br><!--백단에 데이터 전달해주기위한 버튼-->
+        <input type="reset" value="취소"/><br><br><!--입력받은 거 모두 삭제-->
+        <button>버튼</button>
+
+    </form>
+    <br><br>
+    <hr/>
+    <!--기타-->
+    <input type="file" /> <!--선택한 파일 서버에 전송가능-->
+    <input type="hidden" name="tel" value="111-1111"/> <!--화면에 보이지 않지만, 서버에 몰래 전송하고 싶을 때-->
+
+
+</body>
+</html>

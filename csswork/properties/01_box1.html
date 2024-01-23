@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta name=viewport해주는 이유는 어떤 디바이스에서 보던간에 자연스럽게 보여질 수 있도록 하는 기능-->
+    <title>Document</title>
+    <style>
+        
+        html {/* font-size:16px;*/}
+        
+
+        div {/* 아무것도 안해도 이미 기본값으로 설정돼있음*/
+            width:100px;/*width는 최대한 늘어나려는 특성 있음*/
+            height:100px;/*높이는 최대한 내용에만 맞추려는(최대한 줄어드려는) 특성 있음 */
+            background-color: olivedrab;
+        }
+        
+        span {/*따로 지정하지 않아도 기본값으로 설정돼있음, 단 블럭요소와 다름*/
+            background-color: yellowgreen;   
+        } /*인라인 요소에서는 높이와 폭 모두가 줄어드려는 특성*/ 
+
+        .parents {
+            width: 300px;
+            height: 200px;
+            background-color: royalblue;
+            font-size: 10px;
+        }
+        
+        .child {
+            width: 50vw; 
+            /*기본 브라우저는 16px이니까, 10em이면 160px, 부모를 10px로 바꾸면 100px로 줄어들음*/
+            /*rem으로 바꾸면 html의 기본px인 16px 기준으로 160px이됨*/
+            /*50vw:화면 전체크기의 절반이됨. 늘리거나 줄이거나 절반*/
+            height: 50%;
+            background-color: coral;
+        }
+        /* %로 바꾸면 부모 안에서 최대한 늘어남, 50%로 바꾸면 부모의 절반*/
+        /* em: 브라우저에서 f12열고 전체 선택 후 폰트크기 보면됨.*/
+        
+        .container {
+            background-color: crimson;
+            width:200px;
+            height:400px;
+        }
+
+
+        .container .item { /*복합선택자-하위선택자*/
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            margin-bottom:30px;/*바깥쪽여백*/
+        }
+
+        .paddingContainer .item {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 4px solid plum;
+        }
+
+        .paddingContainer .item:first-child {
+            padding: 20px; /* margin과 똑같이 단축속성*/
+            border-radius: 0 10px 0 0; /*top right bottom left*/
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--박스모델 너비-->
+    <div>Hello</div>
+    <span>World</span>
+
+    <hr/>
+    <!--박스모델 단위-->
+    <div class="parents">
+        <div class="child"></div>
+    </div>
+
+    <hr/>
+    <!--박스모델 외부여백-->
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <hr/>
+    <!--박스모델 내부여백-->
+    <div class="paddingContainer">
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 페이지 이동 -->
+    <a href="https://w3schools.com">w3schools.com</a><br>
+    <a href="http://localhost:5500/sub/sub1.html" target="_self">sub1.html로 이동</a><br>
+    <a href="./sub/sub2.html" target="_blank">sub2.html로 이동</a><br>
+    <ul>
+        <li><a href="./sub/sub2.html#first">첫번째 주제</a></li>
+        <li><a href="./sub/sub2.html#second">두번째 주제</a></li>
+        <li><a href="./sub/sub2.html#third">세번째 주제</a></li>
+    </ul>
+    <!-- 하이퍼링크는 프로그램 실행, 다운로드 등 다양한 기능 수행 가능, 오디오나 비디오 실행도 가능 하지만 요즘엔 별로 사용x html5에는 기능 자동탑재되어있어서 하이퍼링크 사용잘 안함-->
+    <a href="./resources/contents.zip">다운로드</a><br> <!--이 글자를 클릭하면 사람들이 내가 지정한 파일을 다운받을 수 있게 하는거임-->
+    <a href="./Frontend/resources/sample.mp4">동영상 실행</a><br> 
+    <a href="mailto:thddu2@naver.com">메일 보내기</a><!--pesedo protocol: 가상으로 만들어진 약속. mailto 는 메일 주고받기 위한 작은 약속-->
+
+    <!--이미지맵-->
+    <!--지도에서 서울이나 경기 클릭하면 관련 페이지 뜨는 기능-->
+    <img src="./images/Penguins.jpg" usemap="#Penguins"/>
+
+    <!--img와 map 태그 연결할 게 필요->usemap -->
+
+    <map name="Penguins">
+        <area shape="circle" coords="247,129,50" 
+            href="https://www.naver.com"/> <!--좌표 클릭하면 이 페이지로 이동-->
+        <area shape="rect" coords="510,124,569,185" 
+            href="./test3.html"/> 
+        <!--area는 비어있는 태그라 단독으로 닫아주면 됨--><!--coords는 그림에서 특정 영역 선택해서 누르기위해 좌표 지정하는 태그-->
+    </map>
+
+    
+
+</body>
+</html>

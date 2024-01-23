@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    a:hover {color:blue;
+            transition: 1s;}
+
+    .box {
+        width:100px;
+        height:100px;
+        background-color: orange;
+        transition: 1s; /*시간 간격을 두고 변화줄 수 있는 기능*/
+    }
+
+    .box:hover {
+        width:300px;
+        background-color: royalblue;
+    }
+
+    a:active {color: red;}
+
+    input:focus {background-color:cornflowerblue;
+                transition: 1s;}
+
+    .box1 {
+        width:100px;
+        height:100px;
+        background-color: cornflowerblue;
+        transition: 1s;
+    }
+    
+    .box1:focus {
+        width:300px;
+        background-color: coral;
+    } /* 하지만 div 는 포커스가 되지 않아서, 작동되지않음. 즉, 입력창 등만 포커스가 적용됨*/
+    
+                
+
+</style>
+
+</head>
+
+<body>
+    <a href="https://www.naver.com">네이버로 이동</a>
+    <br><br>
+    <div class="box"></div>
+    <br><br>
+    <input type="text" />
+    <br><br>
+    <div class="box1" tabindex="0"></div>  <!--순서를 가장 첫번째로 주어야함-->
+</body>
+</html>

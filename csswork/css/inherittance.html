@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animal {color:red;} /*호랑이, 사자, 코끼리한테도 스타일상속됨*/
+        .parents {width:300px;/*넓이는 상속됨*/
+                height:200px; /*높이는 상속안됨*/
+                background-color: cornflowerblue;  
+                }
+        /*child에 상속됐는지 확인하려면 서버창에서 f12 로 확인가능*/
+        .child {width:100px;
+                
+                /*상속여부 확인 위해 위치조정*/
+                position:fixed;
+                top:100px;
+                right:10px;
+                
+                height:inherit;/*원래 상속이 안되지만, inherit사용하여 부모값 강제 상속가능*/
+                background-color: inherit; 
+                }
+        /*공간이 있으면 배경색이 보여야되는데 안보임, 높이가 없으니까 공간이 안생김*/        
+    </style>
+
+</head>
+<body>
+    <div class="ecosystem">생태계
+        <div class="animal">동물
+            <div class="tiger">호랑이</div>
+            <div class="lion">사자</div>
+            <div class="elephant">코끼리</div>
+        </div>
+        <div calss="plant">식물</div>
+    </div>
+
+    <hr/>
+    <div class="parents">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

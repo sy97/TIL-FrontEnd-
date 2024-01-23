@@ -1,0 +1,389 @@
+HTML(Hypertext Transfer Markup Language)
+구조+디자인 이었는데, 디자인은 css로 넘어감
+=========================================
+1. 용도 : 문서의 구조를 설정
+2. History
+    - 현재 HTML5 사용
+3. 작성 도구
+    - Visual Studio Code
+4. 웹 컨텐츠 작성 시 고려할 점
+    - 웹 표준 (크로스 브라우징)
+    - 웹 접근성
+5. 참조 사이트
+    - http://w3schools.com
+6. 플러그인 설치
+    - live server
+    - Auto Rename Tag
+7. 문법
+(1) 주석 처리 : <!-- 주석 내용 -->
+(2) 태그의 기본 구조 : Element
+    - <열린태그>컨텐츠</닫힌태그>
+    - <열린태그 속성="값" 속성="값" ...>컨텐츠</닫힌태그>
+    - <열린태그></닫힌태그> 또는 <태그 />
+(3) 문서 구조
+    <!DOCTYPE html>
+    <html>
+        <head> 다양한 메타정보나 선언부 </head>
+        <body> 화면에 보여질 본문 내용 </body>
+    </html>
+(4) 태그의 종류
+    1) <head>
+        - <title>
+        - <meta>
+        - test2.html
+    2) 글자 꾸미기
+        - test3.html
+    3) 이미지 
+        - gif
+            비손실 압축
+            8비트 색상만 지원
+            여러 장의 이미지를 하나의 파일로 묶을 수 있다.
+        - jpg(jpeg)
+            압축률이 뛰어나다(용량이 작다)
+            여러 번 반복 저장하게 되면 손실율이 매우 높아진다.
+        - png
+            git의 대체 포맷
+            비손실 압축
+            투명도 지원
+        - webp
+            jpg, gif, png를 모두 대체할 수 있는 이미지 포맷
+
+        - test4.html
+
+        ※ 경로
+            - 상대 경로
+            - 절대 경로
+                로컬 경로
+                가상 경로
+    4) 하이퍼 링크
+        - sub폴더에 sub1.html, sub2.html
+        - test5.html
+        - URL(Uniform Resource Locator)
+            네트워크상에서 자원이 어디에 있는지를 알려주기 위한 규약
+            형식
+                프로토콜명://도메인주소(ip주소):포트번호/폴더명/파일명#세부위치
+                http://
+    
+    5) 테이블, div, span
+        -테이블: 상단메뉴, 사이드 메뉴 등의 구조를 잡을 때 사용
+        -test6.html
+
+    6) input type: 폼 태그 
+        -사용자와 프로그램 사이에서 소통하는 태그
+        -test7.html
+
+
+-------------------------------
+CSS(Cascading Style Sheet) 
+-마크업 언어인 html가 실제로 구현되도록 하는 스타일언어
+ html에서 디자인 기능만 뽑아서 관리하는 기능
+=======================================
+1. 개요
+    (1) 버전
+        -CSS 1.X-> CSS 2.X -> CSS 3.X -> CSS4.X
+    (2) 목적
+        1)디자인(HTML 등)의 효과적인 관리(유지보수 등,,) 디자인을 분리시켜 관리하면 유지보수가 쉬워짐
+        2)웹 표준화(크로스 브라우징)
+
+2. 사용방법
+    (1) External Style
+        -별도의 css 파일을 만들어서 호출하여 사용하는 방식
+    (2) Inline Style
+    (3) Internal Style
+
+3. 문법 -Selector(어디에 디자인 할것인가) {속성:값; 속성:값;...}(어떻게 디자인 할것인가)
+
+    (1)Selector 
+        1) 기본 선택자
+            a)*:전체 선택자(Universal Selector)
+                    - 모든 요소를 선택할 때 사용
+                        <style>
+                         * {color: chocolate; font-size:20px;}
+                        </style>
+            b)Type Selector:태그선택자
+                    - 태그 이름으로 선택
+                    - 많은 디자인을 하기 위해서는 한계가 있다.
+                         <div style="background-color: darkslateblue; width:300px;  height:100px;">내용</div> 
+            c)Class Selector 
+                    - 태그 선택자를 보완하기 위해 나온 선택자
+                    - HTML의 class 속성 값으로 선택
+                        <style>
+                            * {color: chocolate; font-size:20px;}
+                                .winter {color: red; 
+                                font-size: 30px;
+                                font-weight: 600;}
+                        </style>
+                        <body>
+                         <h1 class="winter"> 현재 디자인이 적용될 문장</h1> 
+                         <span class="winter">안녕하세요, 강소영님</span>
+                         winter라는 class를 적용하겠다. 라는 뜻
+            d)ID Selector
+                    - Class Selector와 비슷
+                    - HTML의 ID 속성 값으로 선택 
+                        <style> 
+                             #summer {color: blue;
+                                    font-size: 16pt;
+                                    font-family: 궁서;}        
+                        </style>
+                        </head>
+                        <body>
+                            <h1 id="summer">여기도 같은 디자인으로 적용될 부분</h1>
+                            <div id="summer">내용</div>
+                        </body>
+            * Class Selector를 사용하는 것이 일반적. ID Selector는 디자인을 위한게 X, 식별자용. 
+            css보다 javascript에서 사용하는 것이 효율적
+        2) 복합 선택자 
+        - 기본 선택자의 한계를 보완해주는 복합 선택자
+        - 기본 선택자 4개를 조합해서 사용하는 선택자 
+            a) 일치 선택자(Basic Combinator Selector)
+                -abc라는 선택자와 xyz라는 선택자를 함께 작성함, abc와 xyz가 동시에 만족하는 선택자-> abcxyz
+                    <style>
+                    span.orange {color: orangered;} /*.orangespan 으로 쓰면 문제가 생길수도있음 */
+                    </style>
+            b) 자식 선택자(Child Combinator Selector)
+                -abc라는 선택자의 자식(포함되어 있는 태그들)들 중에 xyz를 선택하겠다 -> abc>xyz
+            
+            c) 하위(후손) 선택자(Descendent Combinator Selector)
+                -자식이 직계 선택자라면, 하위 선택자는 범위가 더 넓어짐. 
+                -abc(공백)xyz
+            d) 인접 형제 선택자(Adjacent Sibling Combinator)
+                -abc+xyz
+                -선택자 abc의 다음 형제 요소 xyz 하나를 선택
+            e) 일반 형제 선택자(General Sibling Combinator)
+                -abc~(틸드)xyz
+                -선택자 abc의 다음 형제 요소 xyz 모두를 선택
+        3) 가상 클래스 선택자(Pseudo(가짜) Classes Selector)
+        -javascript에서 처리하는 기능들인데, css 자주 씀
+
+            a) HOVER
+                -버튼 위에 마우스 올려져 있는 상태가 hover 상태. 이 때 디자인을 적용하기 위한 기능
+                -abc라는 버튼 위에 마우슬 올려놨을 때 디자인을 적용하겠다. -> abc:hover {...} 공백있으면 안됨
+            b) ACTIVE
+                -마우스를 클릭하고 있는 동안 선택
+                -abc:active {...}
+            c) FOCUS
+                -해당 요소가 포커스 되면 선택(입력창 라인이 진하게 변하는 것 등.)
+                -HTML 대화형 컨텐츠, 즉 포커스가 되는 컨텐츠에만 적용(input, a label, select, button,... etc)
+                -focus를 가질 수 없는 요소에 focus를 가질 수 있게 하기 위해서는 tabindex요소 사용해야함
+                tab의 순서를 가질 수 있게 해주는 기능
+            ------------- 여기까지 동적 기술
+
+            d) FIRST Child
+                -선택자가 형제 요소 중 첫번째라면 선택
+            e) LAST Child
+                -선택자가 형제 요소 중 마지막일 때 선택
+            f) NTH Child
+                -선택자가 형제 요소 중 n번째일 때 선택
+            g) Negative Selector NOT
+                -abc:not(xyz) -> 선택자 xyz가 아닌 abc요소를 선택하겠다. 
+
+            ------------- 여기까지 정적 기술
+
+        4) 가상 요소 선택자(Pseudo Element(태그들) Selector)
+        -인라인 요소
+            a)BEFORE
+                -선택자 요소의 내부 앞에 내용을 삽입할 때 사용 
+                -선택자::before {content: "내용"}
+            b)AFTER
+                -선택자 요소의 내부 뒤에 내용을 삽입할 때 사용
+                -선택자::after {content: "내용"}
+
+            *before after를 쓰려면 삽입할 내용이 없어도 무조건 content써야함    
+
+        5) 속성 선택자(Attribute Selector)
+            [속성] {...}
+            [속성=값] {...} ->이걸 더 자주사용
+             * 태그만 가지고는 디테일하게 찾아갈 수 없어서 여러 선택자가 존재
+
+    (2) 글자와 상자
+        1) 인라인 요소 : 글자를 만들기 위한 요소
+            -ex) <span>, <img>, <a>, ....
+            -줄바꿈 현상이 없음
+            -width, height 값 적용 불가
+            -margin/padding/bottom 값 적용 불가(좌/우 여백은 가능)
+            -block요소 포함 불가
+        2) 블럭 요소 : 상자(레이아웃)를 만들기 위한 요소
+            -ex) <div>, <p>, <h>, <ul>, .. 
+            -줄바꿈 현상이 있음
+            -width, height 값 적용 가능(공간 만들기 가능)
+            -margin/padding/bottom 값 적용 가능
+            -inline요소 포함 가능
+
+    (3) 스타일상속
+        1) 주로 글자/문자 관련 속성들에 대해서만 상속가능
+        2) font-style, font-weight, font-size, line-height, font-family, color, text-align, etc,,,
+        3) 강제 상속 : inherit (div같이 상속 안되는 애들에 사용할 수 있는 기능.)
+
+    (4) 선택자 우선순위
+    -같은 요소가 여러 선언의 대상이 된 경우, 어떤 선언의 CSS속성을 우선 적용할 것인지 결정
+    -점수가 가장 높은 선언이 우선
+    -점수가 같은 경우, 가장 마지막에 선언된 속성이 우선
+
+        1) 점수
+            -인라인 선언(태그 안에 직접 선언) : 1000점
+            -id 선택자 : 100점
+            -class 선택자 : 10점
+            -태그 선택자: 1점
+            -전체 선택자, 상속, 부정: 0점
+            -!important: 치트키, 무한대, 필요한 경우가 아니라면 가급적 쓰지말것
+
+        2) 사례
+            -.list li.item{....} : class tag.class ->21점
+            -#submit span{...} : id tag -> 101점
+            -:not(.box){...} :  부정(.class)-> 10점 
+
+    (5) 속성
+    -박스 모델, 글꼴/문자, 배경, 배치, 플렉스(정렬), 전환(애니메이션), 변환, 띄움, 애니메이션, 그리드, 다단, 필터 
+        1) 박스모델
+            -우리가 보는 웹페이지는 글자(인라인 요소, 컨텐츠)+박스(블럭 요소,글자를 담는 곳)로 이루어짐
+            -너비(width, height)
+                -기본값 : auto
+                -단위: px, em, rem, vw  사용가능
+            -최대 너비(max-widht, max-height)
+                -기본값:none(무한대)
+                -auto:거의 사용하지않음
+                -단위: px, em, rem, vw  사용가능
+            -최소 너비(min-widht, min-height)
+                -기본값:0
+                -auto:거의 사용하지않음
+                -단위: px, em, rem, vw  사용가능
+            -단위
+                -px:절대적인 크기
+                    가장 일반적으로 씀
+                -%:상대적 크기
+                -em:요소의 글꼴 크기를 계산해서 단위 계산(부모가 누구냐에따라 매번 달라짐)
+                -rem:루트(꼭대기-html태그) 요소의 글꼴 크기(크기를 어느정도 고정시키고 싶을때)
+                     무조건 html에 설정된 글꼴을 따름   
+                     em보다는 rem을 좀 더 사용
+                -vw:viewport의 가로/세로 너비의 백분율(상대적 크기)
+                    브라우저 화면 기준으로 계산되는 화면의 크기 
+                    1vw= 브라우저 화면 전체 크기의 1/100
+                -vh:위와 동일
+            -외부여백(margin) 
+                -기본값:0(따로지정하지 않으면 여백은 없음)
+                -auto 값 줄 수 있고, 단위 따로 지정해서 값 줄 수 있음,%는 거의안씀
+                -음수 지정 가능
+                -단축 속성
+                    -margin:top ; right ; bottom ; left(여러 값을 줄 때, 시계방향으로 값 지정됨)
+                            원래는 10px, 10px, 10px, 10px 이렇게 줘야하는데 불편하니까 한번만
+                            
+                            [top bottome] ; [right left](두개 씩 줄 수도 있음)
+                            20px 10px면, 위아래는 20px, 왼 오는 10px
+                            
+                            top ; [left right] ; bottom
+                            상 중 하
+
+                            [top right bottome left]
+                            같은 값이면 한번에 -> 이게단축속성
+                -개별 속성
+                    -margin-top, margin-bottom, margin-left, martgin-right
+                    하나씩 따로따로 지정할 수 있음 
+            -내부여백(padidng)
+                -기본값:0
+                -auto, 단위, % 내부여백은 % 많이씀
+                -음수 지정 X                   
+                -요소의 크기가 커짐(부풀려진다고 생각하자!!)
+                 padding:top ; right ; bottom ; left(여러 값을 줄 때, 시계방향으로 값 지정됨)
+                            원래는 10px, 10px, 10px, 10px 이렇게 줘야하는데 불편하니까 한번만
+                            
+                 padding:[top bottome] ; [right left](두개 씩 줄 수도 있음)
+                            20px 10px면, 위아래는 20px, 왼 오는 10px
+                            
+                 padding:top ; [left right] ; bottom
+                            상 중 하
+
+                 padding:[top right bottome left]
+                            같은 값이면 한번에 -> 이게단축속성
+            -테두리선(border)과 색상 표현
+                -{border: 선 두께 선 종로 선 색상;} 순서는 가급적 지키기
+                -요소의 크기가 커짐
+                -개별속성으로 지정가능
+                    border-width: 단축속성 (padding, margin과 같음)
+                    border-style: 단축속성 
+                    border-color: 단축속성
+                        -색상 이름 : 브라우저에서 제공하는 이름
+                        -16진수: #000, #FFFFFF
+                    border-방향:border-top, border-left,...
+                    border-뱡향-속성:border-top-width, border-bottom-style,.. 이런식으로 복합적으로 사용가능
+            -테두리 모서리 : border-radius 
+                -기본값: 0
+                -단위: px, em, vw, etc,,
+                -단축 속성    
+
+            -크기 계산(box-sizing) ** 알아둘필요가 있다.
+                -요소의 크기 계산 기준을 지정
+                -기본값: content-box(요소의 내용으로만 크기 계산)
+                -border-box(요소의 내용+padding+border크기 계산)    
+            -넘침 제어(overflow)
+                -요소의 크기 이상으로 내용이 넘쳤을 때, 보여짐 제어하는 단축 속성
+                -기본값:visible(그냥그대로 보여지는것)
+                -hidden:넘친 내용을 잘라냄
+                -auto: 넘친 내용이 있을 때만 잘라내고 스크롤바 생성
+                -scroll:거의 안씀        
+                -개별 속성
+                    overflow-x, overflow-y
+            -출력 특성(display) **중요
+                -기본값:block, inline, inline-block 
+                    왜 기본값이 3개나 될까? 요소에따라 달라지기때문
+                -flex: 1차원 레이아웃 잡을 때
+                -grid: 2차원 레이아웃 잡을 때
+                -none: 존재하지만, 화면에서 안보여짐
+            -투명도(opacity)
+                -기본값: 1 (완전 불투명)
+                -0 ~ 1 사이의 소수점으로 투명도 설정 가능
+        2) 글꼴
+            -font-style
+            -font-weight: 기본두께 400(normal), 두껍게 할 때는 700(bold)정도(보통100~900)
+            -font-size
+            -line-height:보통 단위 없이씀. 숫자(배수) 만약 2를 쓰면, 기본에 곱하기 2되는것
+            -font-family:글꼴1, 글꼴2, 글꼴 계열 지정가능
+                         글꼴계열:serif(바탕체계열),sans-serif(고딕체),monospace(고정너비글꼴)
+                                 cursive(필기체),fantasy(장식글꼴)
+        3) 문자
+            -color
+            -text-align(글자 정렬): left,right,center,justify(양쪽정렬인데 거의안씀)
+            -text-decoration: 선 여부(none, underline, line-through(중앙선,취소선))
+            -text-indent: 들여쓰기(양수) , 내어쓰기(음수) 모두 지정
+
+        4) 배경지정
+            -background-color:Transparent(기본값, 투명)
+            -background-image:none(기본값),url함수 사용하여 이미지 넣음 -> url("이미지경로")
+            -background-repeat:배경이미지 반복
+            -background-position
+                -center
+                -backgroudd-position x축 y축;
+            -backgroudd-size
+                -auto:원래 이미지의 원래크기
+                -단위
+                -cover(비율 유지하고 요소의 더 넓은 너비에 맞춤)
+                -contain(비율을 유지하고 요소의 더 짧은 너비에 맞춤)
+            -background-attachment
+                -scroll
+                -fixed
+         5)배치(position)
+            -요소를 배치할 때는 어떤 기준을 먼저 설정하고 나서(position) 위치(top, bottom, left, right, z-index)를 정해야 한다.
+            -position: 요소의 위치 지정 기준
+                -static: 기준 없음
+                -relative: 요소 자신을 기준
+                -absoulte: **위치상** 부모 요소 기준
+                -fixed: 뷰포트 기준
+
+            -요소 쌓임 순서(Stack Order)
+                -겹쳤을 때 순서 정하기 
+                -요소에 position속성값이 있는 경우 가장 위에 쌓임
+                -위의 조건이 같은 경우 , z-index의 값이 높을수록 위에 쌓임
+                -위의 조건이 모두 같은 경우, 작성된 순서가 마지막일수록 위에 쌓임  
+
+            -position의 값이 absoulte거나 fixed일 경우 자동적으로 display속성이
+             block으로 변경됨    
+
+
+
+
+
+
+
+
+
+
+
