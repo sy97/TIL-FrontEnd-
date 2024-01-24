@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // String
+        let str1 = "Hello";
+        let str2 = '1234' ;
+
+        //backtick
+        // " " 차이는 문자열 안에 변수를 불러올 수 있음
+        let str3 = `hello ${str2}`;
+        console.log(str1, str2); 
+        console.log(str3);
+        console.log("------------------------------------");
+
+        //Number
+        let num1 = 100;
+        console.log(num1 + 2);
+        //자바와 다르게, 실수도 한꺼번에 변수지정 가능
+        let num2 = 3.14;
+        let num3 = .2;
+        console.log(num1 + num2);
+
+        //데이터 타입을 알려주는 문법
+        console.log(typeof(str1), typeof(num1));
+
+        //string과 number를 더해보면, 연결돼서 나타남
+        console.log(num1 + str1); //문자형이됨
+        let num4; // 이 상태가 undefined 상태
+        console.log(num1 + num4); 
+        //타입: Not a Number ->NAN
+        console.log(typeof(num1 + num4));
+        //사용할 수 없지만, 타입은 number라고 나옴
+
+        num1 = 0.1;
+        num2 = 0.2;
+        console.log(num1 + num2);
+        /* 컴퓨터는 정수계산밖에 못하므로 
+        3. 0000004 라는 값이 나옴
+        뒤에는 오차값.  그래서 정리해야함*/
+        console.log((num1 + num2).toFixed(1));
+        console.log(typeof(Number((num1 + num2).toFixed(1))));
+        //number 함수 넣어주면 숫자로 바뀜
+
+        console.log("------------------------------------");
+        //Boolean
+        let b1 = true;
+        let b2 = false;
+        console.log(b1, b2);
+
+        console.log("------------------------------------");
+        //undefined
+        let un1;
+        console.log(un1);
+        console.log(typeof(un1));
+
+        console.log("------------------------------------");
+        //Null
+        let age = null;
+        console.log(age);
+        //기존 값을 청소해준다고 생각하면 됨.
+
+        console.log("------------------------------------");
+        //object: 복잡한 데이터의 포장지
+        let user1 = new Object(); //객체를 생성하는것
+        user1.name = "홍길동"; //객체는 항상 '.' 을 달고 다니니까, '.'달고다니는 놈들은 다 객체라고 생각해도됨
+        user1.age = "20";
+        user1.height = 174;
+        //user1은 변수를 묶어주는 변수. 커다란 포장지 
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
