@@ -1,8 +1,17 @@
 
 body {
+    height: 120vh;
     background-image: url(/csswork/css/Overwatch/images/bg.jpg);
+    background-repeat: no-repeat;
+
+    /*배경 제어*/
+    background-attachment: fixed;
+    
 }
 
+.container {
+    padding: 50px 0;
+}
 /*수평정렬*/
 .container .heroes {
     display:flex;
@@ -19,7 +28,9 @@ body {
     /*영웅 뭉태기 가운데로 설정*/
     /* 두개 할 때는, 위아래 / 좌우 */
     /*margin은 가로 사이즈가 있을 때만 가능*/
-    margin: 50px auto; 
+    margin: 50px auto;
+    padding: 40px 20px; 
+    
     
 }
 
@@ -30,7 +41,7 @@ body {
     background-color: gray;
     margin: 4px;
     border: 3px solid white;
-    transform: skewX(-14deg);
+    transform: skew(-14deg);
     border-radius: 10px;
     transition: background-color 1s, 
                 transform 0.3s;
@@ -50,18 +61,119 @@ body {
 
 /*영웅 이미지 넣기*/
 .container .heroes .hero .image {
-
-    width: 120%;
+    width: 140%;
     height: 100%;
     background-position: center;
     background-size: 95px;
     background-repeat: no-repeat;
-    
-
+    transform: skew(14deg) translate(-15px);
 }
 
 /*image 클래스 설정 잘하기,,,*/
 .container .heroes .hero:nth-child(1) .image {
     background-image: url(/csswork/css/Overwatch/images/hero1.png);
-    
+}
+
+.container .heroes .hero:nth-child(2) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero2.png);
+}
+.container .heroes .hero:nth-child(3) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero3.png);
+}
+.container .heroes .hero:nth-child(4) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero4.png);
+}
+.container .heroes .hero:nth-child(5) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero5.png);
+}
+.container .heroes .hero:nth-child(6) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero6.png);
+}
+.container .heroes .hero:nth-child(7) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero7.png);
+}
+.container .heroes .hero:nth-child(8) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero8.png);
+}
+.container .heroes .hero:nth-child(9) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero9.png);
+}
+.container .heroes .hero:nth-child(10) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero10.png);
+}
+.container .heroes .hero:nth-child(11) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero11.png);
+}
+.container .heroes .hero:nth-child(12) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero12.png);
+}
+.container .heroes .hero:nth-child(13) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero13.png);
+}
+.container .heroes .hero:nth-child(14) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero14.png);
+}
+.container .heroes .hero:nth-child(15) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero15.png);
+}
+.container .heroes .hero:nth-child(16) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero16.png);
+}
+.container .heroes .hero:nth-child(17) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero17.png);
+}
+.container .heroes .hero:nth-child(18) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero18.png);
+}
+.container .heroes .hero:nth-child(19) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero19.png);
+}
+.container .heroes .hero:nth-child(20) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero21.png);
+}
+.container .heroes .hero:nth-child(21) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero21.png);
+}
+.container .heroes .hero:nth-child(22) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero22.png);
+}
+.container .heroes .hero:nth-child(23) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero23.png);
+}
+.container .heroes .hero:nth-child(24) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero24.png);
+}
+.container .heroes .hero:nth-child(25) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero25.png);
+}
+.container .heroes .hero:nth-child(26) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero26.png);
+}
+.container .heroes .hero:nth-child(27) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero27.png);
+}
+.container .heroes .hero:nth-child(28) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero28.png);
+}
+.container .heroes .hero:nth-child(29) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero29.png);
+}
+.container .heroes .hero:nth-child(30) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero30.png);
+}
+.container .heroes .hero:nth-child(31) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero31.png);
+}
+.container .heroes .hero:nth-child(32) .image {
+    background-image: url(/csswork/css/Overwatch/images/hero32.png);
+}
+
+
+.container .logo {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.container .logo img {
+    width: 100%;
 }

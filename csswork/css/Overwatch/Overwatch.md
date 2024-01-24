@@ -6,3 +6,9 @@
 * .container 쓰고 tab 누르면 <divclass="container"> `</div>`자동생성 (VSC한정)
 * margin 공부 다시하기
 * flex다시 공부하기
+* skew, tranlate 줄 때 축 지정하지말기
+
+
+### 해봐야할것
+
+* 영웅박스 fixed 로 고정해보기
