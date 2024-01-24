@@ -156,11 +156,23 @@ let age = null;
 //기존 값을 청소해준다고 생각하면됨
 ```
 
-Object
+6.Object: 객체
 
-Array
+-객체는 포장지라고 생각하자
 
-Function
+```javascript
+let user = new Object();
+user1.name = "홍길동";
+user1.age = "17";
+user1.heigt = 167;
+//user가 변수를 묶어주는 변수가된것.
+
+```
+
+
+7.Array
+
+8.Function
 
 
 데이터 타입을 확인하는 문법
