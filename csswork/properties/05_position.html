@@ -8,33 +8,28 @@
         body {
             height: 2000px;
         }
-        .wrap {
-            width: 400px;
-            height: 300px;
-            background-color: coral;
-            position: relative;
-            /*위치상 부모됨*/
-        }
         .container {
             width: 300px;
             background-color: cornflowerblue;
-            /*position: relative; 자식을 배치하기 위해 스스로 기준이 되어야함 */
-            
+            display: flex; /*자식을 배치하기 위해 스스로 기준이 되어야함 */
+            justify-content: flex-end;
         }
 
         .container .item {
             border: 4px dashed blue;
             background-color: orange;
+
         }
 
         .container .item:nth-child(1) {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
         }
 
         .container .item:nth-child(2) {
-            width: 140px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
+        
 
             /* relative */
             /*position: relative;
@@ -52,13 +47,12 @@
             /*구조적 부모는 container지만, container가 기준이 없으므로 부모 안에 위치되지않는것*/
             
             /* fixed */
-            position: fixed;
             /* viewport기준이므로 페이지 오른쪽 하단에 위치됨*/
         }
 
         .container .item:nth-child(3) {
-            width: 70px;
-            height: 120px;
+            width: 50px;
+            height: 50px;
         }
 
         span {
