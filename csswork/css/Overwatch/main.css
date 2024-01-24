@@ -66,7 +66,7 @@ body {
     background-position: center;
     background-size: 95px;
     background-repeat: no-repeat;
-    transform: skew(14deg) translate(-15px);
+    transform: skew(14deg) translateX(-15px);
 }
 
 /*image 클래스 설정 잘하기,,,*/
@@ -172,6 +172,7 @@ body {
 .container .logo {
     max-width: 300px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .container .logo img {
