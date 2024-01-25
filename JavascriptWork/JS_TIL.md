@@ -258,7 +258,7 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_opera
 괄호를 사용해서 우선 연산자를 잘 선택하자 
 
 
-1.산술연산자
+#### 1.산술연산자
 
 ```javascript
 //산술 연산자(++, --)
@@ -276,7 +276,7 @@ console.log(num1, num);
 
 ```
 
-2.비교연산자
+#### 2.비교연산자
 
 ```javascript
 let num1 = 10;
@@ -305,19 +305,76 @@ console.log(num1 === num2);
 //false. 타입은 다르므로.
 ```
 
-3.논리연산자
+#### 3.논리연산자
 
-4.할당연산자
+0은 false와 같다.
+
+false와 같은지 물어보면, true 값이 나온다.
+
+```javascript
+let num = 0;
+let num1 = false;
+
+console.log(num && num1);
+//true . 0은, false랑 똑같음 
+
+```
+
+숫자를 넣었을때 &&와 ||의 차이
+
+```javascript
+let num1 = 0;
+let num2 = 1;
+let num3 = 2;
+
+console.log(num1 && num2 && num3);
+//0. 0은 false이므로.
+
+console.log(num2 && num3);
+//2. true값이 없으니까 그냥 마지막까지 검사한 값이 나옴.
+
+console.log(num1 || num2 || num3);
+//1. 제일먼저 만난 true값.
+```
+
+not연산자
+
+피연산자를 `true`로 변환할 수 있으면 `false`를 반환합니다. 그 외에는 `true`를 반환
+
+```javascript
+console.log(!0);
+//true.
+
+console.log(!!0);
+//false
+
+console.log(!1);
+//false
+```
+
+#### 4.할당연산자(=, +=, -=, /=, ...)
+
+```javascript
+a = 10;
+a = 5;
+a = 7;
+console.log(a);
+
+b = 10;
+b += 5; // b = b + 5
+b += 7;// b = b + 7
+console.log(b);
+
+```
 
 
 ---
 
 ### Control statement(제어문)
 
-1.조건문(if, switch)
+### 1.조건문(if, switch)
 
-
-#### if
+#### -if
 
 ** 참고로 한 줄일 때는  { }생략가능
 
@@ -347,7 +404,7 @@ if(조건) {
 
 ```
 
-#### switch
+#### -switch
 
 ```javascript
 switch(수식, 변수) { //조건문이 아님. 크거나작다를 못하고 무조건 같을 때만 사용가능
@@ -364,7 +421,7 @@ switch(수식, 변수) { //조건문이 아님. 크거나작다를 못하고 무
 }
 ```
 
-조건문의 중첩
+#### -조건문의 중첩
 
 ```javascript
 if(조건문) {
@@ -393,3 +450,15 @@ if(조건문) {
 아스키코드에 a-z 까지 숫자로 되어있어서 비교연산자가 가능했던것.
 
 a가 제일 작음.
+
+아스키 코드를 이용하여 대문자인지 소문자인지 구분하는 if문
+
+```javascript
+let str = null;
+if(str >= 'a' && str <= 'z') 
+	console.log("소문자");
+else if (str >= 'A' && str <= 'Z')
+	console.log("대문자");
+else
+	console.log("기타")
+```
