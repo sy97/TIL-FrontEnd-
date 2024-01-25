@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    
+    
+    //학점 switch
+    
+    let avg = 98;
+    switch(parseInt(avg/10)) {
+        case 10:
+            console.log("A학점");
+            break;
+
+        case 9:
+            console.log("A학점")
+            break;
+
+        case 8:
+            console.log("B학점");
+            break;
+        
+        case 7:
+            console.log("C학점");
+            break;
+
+        case 6:
+            console.log("D학점");
+            break;
+
+        default:
+            console.log("F학점");
+    }
+
+
+    /*
+    입력한 값이 숫자이면 숫자라고 출력하고, 
+    소문자이면 소문자라고 출력하고, 대문자면 대문자로
+    그 외에 것은  기타
+    */
+
+    let value = null;
+    if(typeof(value) == 'number') {
+        console.log("숫자");
+    }
+    else if(typeof(value) === 'string') {
+            if(value >= 'a' && value <= 'z') {
+                console.log("소문자");
+            }
+            else if(value >= 'A' && value <= 'Z') {
+                console.log("대문자");
+            }
+            
+            else {
+                console.log("기타");
+            }
+    } 
+
+//사칙연산 프로그램
+    
+    let operator = null;
+    let num1 = null;
+    let num2 = null;
+    let result = 0;
+
+    if(value == "+") {
+        result = num1 + num2;
+    }
+    else if(value == "-") {
+        result = num1 - num2;
+    }
+    else if(value == "*") {
+        result = num1 * num2;
+    }
+    else if(value == "/") {
+        result = num1 / num2;
+    }
+    
+    console.log("결과 : "+num1+value+num2+"="+result);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

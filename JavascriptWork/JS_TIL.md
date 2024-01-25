@@ -316,6 +316,9 @@ console.log(num1 === num2);
 
 1.조건문(if, switch)
 
+
+#### if
+
 ** 참고로 한 줄일 때는  { }생략가능
 
 ```javascript
@@ -329,7 +332,64 @@ if(조건) {
 }else {
 	실행코드
 }
+
+//다중 if문
+if(조건) {
+	실행코드
+}else if {
+	실행코드
+}else if {
+	실행코드
+}[else {
+
+}]
+//더이상 조건이 없을 때, else를 써도되고 안써도됨.
+
+```
+
+#### switch
+
+```javascript
+switch(수식, 변수) { //조건문이 아님. 크거나작다를 못하고 무조건 같을 때만 사용가능
+	case 값:
+	실행할 코드;
+	break;
+
+	case 값2:
+	실행할 코드;
+	break;
+
+	[default:
+	실행할 코드;] //->생략가능
+}
+```
+
+조건문의 중첩
+
+```javascript
+if(조건문) {
+	코드
+	if(조건문) {
+ 		코드
+	...
+ }
+}
 ```
 
 
-2.반복문
+2.반복문(while, do-while, for)
+
+
+
+
+---
+
+### ASC**II** 코드
+
+(American Standard Code for Information Interchange, 미국 정보 교환 표준 부호)
+
+이진수를 십진수로 바꿔주는 코드
+
+아스키코드에 a-z 까지 숫자로 되어있어서 비교연산자가 가능했던것.
+
+a가 제일 작음.
