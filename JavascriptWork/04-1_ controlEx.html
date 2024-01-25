@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 입력한 값이 a, b, c 이면 정답이라고 출력하고, 
+        그 외에 나머지 값은 오답이라고 생각하는 채점프로그램 */
+
+        let score = window.prompt("점수를 입력하세요.");
+
+        if(score <= "c") {
+            console.log("정답");
+        } else {
+            console.log("오답");
+        }
+        //이렇게도 풀 수 있고
+
+        if(score == "a" || score == "b" || socre =="c") {
+            console.log("정답")
+        }else {
+            console.log("오답")
+        }
+        
+        /*
+        c는 문자인데 어떻게 <=가 적용되는걸까?
+        asc(아스키 코드) 때문에
+        미국표준코드 
+
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

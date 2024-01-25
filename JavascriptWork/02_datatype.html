@@ -71,6 +71,64 @@
         user1.age = "20";
         user1.height = 174;
         //user1은 변수를 묶어주는 변수. 커다란 포장지 
+
+        console.log(user1);
+        
+        //묶여있는 객체에 접근해서 꺼내오는 방법1
+        console.log(user1.name, user1.age, user1.height);
+        
+        //방법2
+        console.log(user1["name"], user1["age"]);
+
+        //차이는 없음. 하지만 대괄호를 써야할 때가 있을 수 있음 
+
+        //이렇게 선언하는 방식도 있음.
+        let user2 = {
+            name: "홍길동",
+            age: "17",
+            height: 167
+        }
+        //name- 키/ 홍길동 -값
+
+        console.log(user2["name"], user2["age"]);
+
+        let userA = {
+            name: "홍길동",
+            age : 30
+        }
+
+        let userB = {
+            name: "임꺽정",
+            age : 32,
+            friend : userA //다른 객체 불러올 수 이음
+        }
+
+        console.log(userB);
+        console.log(typeof(userB));
+
+        //userB를통해 userA의 이름 꺼내오기
+        console.log(userB.friend.name);
+        console.log(userB["friend"].name);
+        console.log(userB["friend"]["name"]);
+
+        console.log("------------------------------------");
+        
+        //Array: 배열, 여러개를 쓰기좋게 하나로 묶어조는것
+        let fruit1 = "apple";
+        let fruit2 = "banana";
+        let fruit3 = "shinemusket";
+        
+        let fruits = new Array("apple","banana","shinemusket");
+        //객체와의 차이 
+        //객체는 키: 값 형태로 값을 정하는데, 배열은 바로 값을 넣음.
+
+        console.log(fruits);
+        console.log(fruits[0],fruits[1],fruits[2]);
+        //키가 없기 때문에 "."을 쓰지못하고 []를 써서 접근해야함
+        
+        //배열에 몇개의 데이터가 들어있는지 확인하는법
+        console.log(fruits.length);
+
     </script>
 </head>
 <body>

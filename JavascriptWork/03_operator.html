@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //산술 연산자(++, --)
+        let num = 10;
+        
+        num++; // num=num+1
+        console.log(num);
+
+        //let num1 = ++num;
+        let num1 = num++;
+        console.log(num1, num);
+        /*다른 변수에 넣을 때는, 후위증가와 전위증가 차이가 있기 때문에 조심해야함.
+        후위증가는 let num1에 값을 먼저 넣고, 증가가 되기 때문.
+        그래서  num을 찍으면 증가된값이 나오긴 함.*/
+        
+        console.log("-----------------------------------------------------")
+        //비교연산자(>, <, >=, <=, ==, !=)
+        num = 10;
+        num1 = "10"; //스트링타입
+
+        console.log(num == num1);
+        //true , 타입을 비교하는게 아니라 값으로 비교하는 것이므로.
+
+        console.log(num === num1);
+        //false, ===는 타입을 비교하므로.
+
+        console.log(num != num1);
+        //false, 같은데 같지 않다고 썼으므로
+
+        console.log(num !== num1);
+        //true, 타입이 다르냐 물어봤으므로.
+
+
+        console.log("-----------------------------------------------------")
+        num = 0;
+        num1 = false;
+        console.log(num == num1);
+        //true, 0은 부정의 의미이기 때문에 false랑 같다.
+        console.log(num === num1);
+        //false, 타입은 다르기때문에
+
+        console.log("-----------------------------------------------------")
+        //논리연산자(&&(and), ||(or), !(not)-토글연산자)
+        let a = true;
+        let b = false;
+
+        console.log(a && b);
+        //false, &&은 둘다 참이어야 하니까.
+
+        console.log(a || b);
+        //true, ||은 하나라도 참이면 참이니까 
+
+        console.log(1 && 0, 0 && 1, 1 && 2, 2 && 1);
+        /*0 0 2 1, 
+        0은 false와 같은 취급. 0을 제외한 나머지 숫자는 true값.
+        숫자끼리 비교했을 때는 거짓을 찾다가 마지막까지 찾은 숫자가나옴
+        단, 0은 거짓이고, 거짓데이터를 먼저 뽑아내므로 순서 상관없이 0이 나온것.*/
+
+        console.log(1 && 2 && 0, 1 && 0 && 2, 7 && 4 && 5);
+        //0 , 거짓부터 뽑아내니까. / 0, 거짓부터 뽑아내니까. / 5, 마지막숫자
+
+        console.log('A' && 'B', 'A' && 'B' && '');
+        //B, 거짓이 없으니까 마지막 값 나옴. / 두번째는 아무것도 안나옴. 공백이 거짓이기 때문에 
+
+        console.log(a || b);
+        //true
+
+        console.log(1 || 0, 1 || 2, 'A' || 'B', 'A' || '');
+        //1, 1, A, A 
+        //or 연산자는 하나만 true면 되므로 먼저 만난 true값을 내보냄.
+        console.log(7 || 4 || 5);
+        //7
+        console.log(!0);
+        //true. 바꿔주는것이므로
+        console.log(!1);
+        //false.
+        console.log(!!0);
+        //false. true를 다시 false로 바꿨으므로.
+
+        console.log("-----------------------------------------------------")
+        //할당(치환) 연산자 (=, +=, -=, /=, ...)
+        a = 10;
+        a = 5;
+        a = 7;
+        console.log(a);
+
+        b = 10;
+        b += 5; // b = b + 5
+        b += 7;// b = b + 7
+        console.log(b);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

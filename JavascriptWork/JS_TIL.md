@@ -1,5 +1,3 @@
-
-
 ## Javascript
 
 ## 1.특징
@@ -61,8 +59,7 @@ window.alert("이것은 외부에서 실행되는 스크립트입니다.")
 
 ## 3.문법
 
-##### 변수(Variable): 변할 수 있는 값을 저장할 수 있는 임시 기억(저장)장소
-
+##### (1)변수(Variable): 변할 수 있는 값을 저장할 수 있는 임시 기억(저장)장소
 
 변수 선언
 
@@ -70,7 +67,7 @@ window.alert("이것은 외부에서 실행되는 스크립트입니다.")
 * 변수 선언을 하면 값을 바꿀때 같은 장소에 저장되므로 공간 낭비 없음
 * 변수의 반대 : 상수(똑같이 임시 기억 장소인데, 변경할 수 없는 값)
 * 변수 이름은 의미없이 지으면 안됨
-
+* 변수에 초기값을 넣는 것: 초기화(initialization)
 
 변수 표기법
 
@@ -85,9 +82,7 @@ window.alert("이것은 외부에서 실행되는 스크립트입니다.")
 
 ---
 
-
-
-Data type
+##### (2)Data type
 
 1.String
 
@@ -101,11 +96,7 @@ let str2 = '1234' ;
 let str3 = `hello ${str2}`;
 ```
 
----
-
-
-
- 2. number
+2. number
 
 ```javascript
  //Number
@@ -140,7 +131,6 @@ let b1 = true;
 let b2 = false;
 ```
 
-
 4.Undefined: 선언만 되어있고, 값이 할당되지 않은 상태
 
 ```javascript
@@ -161,19 +151,85 @@ let age = null;
 -객체는 포장지라고 생각하자
 
 ```javascript
+//선언 방법 1
 let user = new Object();
 user1.name = "홍길동";
 user1.age = "17";
 user1.heigt = 167;
 //user가 변수를 묶어주는 변수가된것.
 
+//선언 방법2
+let user2 = {
+name: "임꺽정",
+age: "20",
+height: 187
+}
+
 ```
 
+-출력하면 묶여있는 객체가 보임
+
+![1706143697910](image/JS_TIL/1706143697910.png)
+
+-묶여있는 객체를 꺼내오는법
+
+```javascript
+//묶여있는 객체에 접근해서 꺼내오는 방법1
+console.log(user1.name, user1.age, user1.height);
+  
+//방법2
+console.log(user1["name"], user1["age"]);
+```
+
+-객체 안에 다른 객체 불러오기가 가능
+
+```javascript
+let userA = {
+	name: "홍길동",
+ 	age : 30
+        }
+
+let userB = {
+          name: "임꺽정",
+          age : 32,
+          friend : userA //다른 객체 불러올 수 이음
+        }
+
+```
+
+-userB를통해 userA 불러오는법
+
+```javascript
+console.log(userB.friend.name);
+console.log(userB["friend"].name);
+console.log(userB["friend"]["name"]);
+```
 
 7.Array
 
-8.Function
+```javascript
+//Array: 배열, 여러개를 쓰기좋게 하나로 묶어조는것
+let fruit1 = "apple";
+let fruit2 = "banana";
+let fruit3 = "shinemusket";
+  
+let fruits = new Array("apple","banana","shinemusket");
+//객체와의 차이 
+//객체는 키: 값 형태로 값을 정하는데, 배열은 바로 값을 넣음.
+```
 
+-출력될 때 : 객체와 다르게 [ ] 로 묶여나옴
+
+![1706147034502](image/JS_TIL/1706147034502.png)
+
+```javascript
+//값을 꺼낼 때는 index를 써서 꺼내야함. 순서데이터=index,순서는 0부터
+console.log(fruits[0],fruits[1],fruits[2]);
+//키가 없기 때문에 "."을 쓰지못하고 []를 써서 접근해야함
+
+```
+
+8.Function
 
 데이터 타입을 확인하는 문법
 
@@ -181,3 +237,99 @@ user1.heigt = 167;
 //데이터 타입을 알려주는 문법
 console.log(typeof(str1), typeof(num1));
 ```
+
+
+---
+
+
+
+### Operator
+
+javascript 관련 공식 사이트
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_operators
+
+**연산자의 우선순위**
+
+연산자가 섞였을 때, 
+
+산술연산자 > 비교연산자 > 논리연산자 > 할당연산자
+
+괄호를 사용해서 우선 연산자를 잘 선택하자 
+
+
+1.산술연산자
+
+```javascript
+//산술 연산자(++, --)
+let num = 10;
+  
+num++; // num=num+1
+console.log(num);
+
+//let num1 = ++num;
+let num1 = num++;
+console.log(num1, num);  
+/*다른 변수에 넣을 때는, 후위증가와 전위증가 차이가 있기 때문에 조심해야함.
+후위증가는 let num1에 값을 먼저 넣고, 증가가 되기 때문.
+그래서  num을 찍으면 증가된값이 나오긴 함.*/
+
+```
+
+2.비교연산자
+
+```javascript
+let num1 = 10;
+let num2 ="10";
+
+console.log(num1 == num2);
+//true. 타입이 아니라, 값자체를 비교하는 것이므로
+
+console.log(num1 === num2);
+//false. 타입을 비교해주는 연산자이므로.
+
+console.log(num1 !== num2);
+//false. 값 자체가 같지 않다고 썼으므로.
+
+console.log(num1 !=== num2);
+//true. 타입이 같지 않냐고 물어봤으므로.
+```
+
+```javascript
+let num1 = 0;
+let num2 = false;
+console.log(num1 == num2);
+//true. 0은 부정의 의미가 있으므로
+
+console.log(num1 === num2);
+//false. 타입은 다르므로.
+```
+
+3.논리연산자
+
+4.할당연산자
+
+
+---
+
+### Control statement(제어문)
+
+1.조건문(if, switch)
+
+** 참고로 한 줄일 때는  { }생략가능
+
+```javascript
+if(조건) {
+	실행코드-> 조건이 무조건 참이라는 전제
+}
+
+//거짓인 경우도 적으려면
+if(조건) {
+	실행코드
+}else {
+	실행코드
+}
+```
+
+
+2.반복문
