@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnPopup() {
+            //window.alert("이것은 alert입니다.")
+            /*let input =  window.prompt("입력하세요 : ")
+            document.write(input);
+            */
+
+            let choice = window.confirm("당신의 선택은?");
+            if(choice === true) {
+                window.alert("확인을 선택하셨습니다. ");
+            }
+            else
+                window.alert("취소를 선택하셨습니다.");
+        }
+
+        function fnEval() {
+            let ex = "50 * 2 + 3";
+            console.log(eval(ex)); //eval붙여주면 단순히 나열이 아니라 계산이 된다.
+            
+            ex = "window.alert('안녕'); document.write('hello');";
+            //쌍따옴표랑 홑따옴표 같이 쓸 때는 두개 같은걸로 같이 쓰면 안됨.
+            console.log(eval(ex));
+        }
+
+        function fnParse() {
+            let num1 = "33";
+            let num2 = "22";
+            //console.log(eval(num1) + eval(num2));
+            console.log(parseInt(num1) + parseInt(num2));
+            //eval을 써도 되지만, 하나하나를 바꿀 때는 eval을 쓰는건 좀 과함.
+            console.log(parseInt("33abc")+5);//33만 골라줌. 33+5 = 38나옴. but, abd33이면 안됨. 왼쪽에서부터 파싱하므로.
+            console.log(parseFloat("3.14")+5);//문자->실수형으로 바꿔줌. 
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button"  value="alert test" onclick="fnPopup();"/><br><br>
+    <input type="button"  value="eavl test" onclick="fnEval();"/><br><br>
+    <input type="button"  value="parse test" onclick="fnParse();"/><br><br>
+
+</body>
+</html>

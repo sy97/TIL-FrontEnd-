@@ -29,6 +29,87 @@
             }
             break;
         }
+        
+        //3번 검색예제
+        const users = [
+        {name:'홍길동', age:35, address:'서울'},
+        {name:'임꺽정', age:20, address:'인천'},
+        {name:'유비', age:45, address:'수원'},
+        {name:'관우', age:37, address:'경기'},
+        {name:'장비', age:29, address:'제주'},
+        ]
+        let value = window.prompt("이름을 입력하세요.: ")
+        for(let i = 0; i < users.length; i++) {
+            if(value == users[i].name) {
+                console.log(users[i]);
+                break;
+            }
+        } 
+        /*
+        ex)
+        value = 유비
+        i=0, 0 < 5, 유비 != 홍길동, if문 나옴, for문으로 돌아가서 i=1
+        i=1, 1< 5, 유비 != 임꺽정, if문 나옴,for문으로 돌아가서 i=2
+        i=2, 2<5, 유비 == 유비, 맞으니까 콘솔찍고 브레이크. 
+        */
+
+        //4.const arr = [ 20, 13, 10, 4, 6, ...] 위의 데이터 중에서 최대값 구하기(정렬 x, 특정 함수로 해결하면 안됨 ! 순수하게 코드로)
+        let numbers = [20, 4, 6, 84, 32, 55]
+        let max = 0;
+        for(let i = 0; i < numbers.length; i++) {
+            let min = numbers[i];
+            if(min > max) {
+                max = min;
+            }
+        }
+        console.log(max);
+
+        /*5.전자계산기를 반복문으로 처리하시오
+        한 번 입력해서 끝내지말고, 반복돌면서 실행될 수 있게.
+        끝나는 조건은 연산자에 x를 입력하면 종료.
+        */
+        for( ; ; ) {
+        let num1 = window.prompt("첫 번째 숫자를 입력하세요.:");
+        let num2 = window.prompt("두 번째 숫자를 입력하세요.:");
+        let operator = window.prompt("사칙연산 중 하나를 입력하세요.(x 입력시 프로그램 종료.):");
+            if(operator == "+") {
+            result = Number(num1) + Number(num2);
+            }
+            else if(operator == "-") {
+            result = Number(num1) - Number(num2);
+            }
+            else if(operator == "*") {
+            result = Number(num1) * Number(num2);
+            }
+            else if(operator == "/") {
+            result = Number(num1) / Number(num2);
+            }
+            else if(operator == "x") {
+            console.log("프로그램 종료");
+            break;
+            }    
+            console.log("결과 : " + num1 + operator + num2 + "=" + result);  
+            }
+
+        /* 6.피라미드
+
+            *
+           ***
+          *****
+         *******
+        *********
+
+            */
+        
+        for(let i = 1; i <= 5; i++){
+            for(let j = 0; j < 5 - i; j++){
+                document.write("&nbsp");
+            }
+            for(let k = 1; k <= i * 2 - 1; k++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
 
     </script>
 </head>
