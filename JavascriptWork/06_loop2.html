@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    //배열에 있는 데이터 꺼내오기
+    const fruits = ['Apple', 'Banana' , 'Cherry'];//배열
+    for(let i = 0; i < fruits.length ; i++) {
+        console.log(fruits[i]);
+        //i++; 여기서 카운트하고싶으면 여기서 해도됨. 위에 비워두고.
+    }
+
+
+    /*
+    for(; ;) {
+        if(i<frutis.longth) {
+            console.log(fruits[i]);
+            i++;
+        }
+    } //이렇게되면 무한반복되므로 멈춰주는걸 걸어야함.
+    */
+
+    //이렇게 간단하게 for문 쓸수 있음
+    for(const item of fruits)
+        console.log(item);
+
+    //---------------------------------------------------//    
+    //객체일 때
+    const user = {
+        name:"홍길동",
+        age:20,
+        isVaild:true,
+        email:"hong@mail.net"
+    }
+
+    //배열과 다르게 인덱스(번호)가 없기 때문에 반복문 사용이 어려움. 그래서 변형된 반복문
+    for(const u in user)
+        console.log(user[u]);
+    /* 키를 꺼내오는법
+    for(const u in user)
+        console.log(u);
+</script>
+</head>
+<body>
+    
+</body>
+</html>

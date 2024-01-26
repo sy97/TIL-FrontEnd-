@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //반복문의 중첩
+        //2차원 테이블을 작성하고 싶을 때는, 행과 열이 필요하므로 반복문 2개가 필요함.
+        /*
+        for(let i = 0; i < 3; i++) { //행
+            for(let j = 0; j < 10 ; j++ ) { //열
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        //2차원에서는 항상 행이 먼저!!!!
+        */
+
+        for(let i = 0; i < 5; i++) {
+            for(let j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

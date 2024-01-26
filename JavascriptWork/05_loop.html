@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        let count = 0;서대전역에서 수원역r
+        while(count < 10) {
+            console.log("*");
+            count++;
+        }
+        */
+
+
+        //1부터 10까지의 합계
+        /*
+        let count = 0;
+        let sum = 0;
+        while (count <= 10) {
+            sum += count; // sum = sum + count
+            count++;
+        }
+        console.log(sum);
+        */
+
+        /*
+        loop1
+        sum=0, count=0/sum=0/count=1
+        loop2
+        sum=0, count=1/sum=1/count=2
+        loop3
+        sum=1, count=2/sum=3/count=3
+        loop4
+        sum=3, count=3/sum=6/count=4
+        ...
+        */
+
+        /*
+        //2의 10승 
+        let count = 0;
+        let sum = 1;
+        while (count < 10); {
+            sum = sum * 2;
+            count++;
+        }
+
+        //do while
+        do {
+            sum = sum * 2;
+            count ++;
+        }while(count < 10);
+
+        console.log(sum);
+
+
+        //for
+        for(count=0; count<10 ; count++) {
+            console.log("*");
+        }
+        /*loop1
+        count=0 / 0<10 / * / count=1
+        count=1/ 1<10/ ** / count=2
+        count=2/ 2<10/ *** / count =3
+        ...
+        */
+        
+        /*
+        let sum = 0;
+        for(let count=0; count<=10 ; count++) {
+            sum += count;
+        }
+        console.log(sum);
+        */
+
+        let sum = 1;
+        for(let count=0; count < 10; count ++) {
+            sum = sum * 2;
+        }
+        console.log(sum)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

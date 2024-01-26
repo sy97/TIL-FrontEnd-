@@ -238,10 +238,7 @@ console.log(fruits[0],fruits[1],fruits[2]);
 console.log(typeof(str1), typeof(num1));
 ```
 
-
 ---
-
-
 
 ### Operator
 
@@ -251,12 +248,11 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_opera
 
 **연산자의 우선순위**
 
-연산자가 섞였을 때, 
+연산자가 섞였을 때,
 
 산술연산자 > 비교연산자 > 논리연산자 > 할당연산자
 
-괄호를 사용해서 우선 연산자를 잘 선택하자 
-
+괄호를 사용해서 우선 연산자를 잘 선택하자
 
 #### 1.산술연산자
 
@@ -367,7 +363,6 @@ console.log(b);
 
 ```
 
-
 ---
 
 ### Control statement(제어문)
@@ -433,13 +428,126 @@ if(조건문) {
 }
 ```
 
+#### 2.반복문(while, do-while, for)
 
-2.반복문(while, do-while, for)
+**while**
 
+```javascript
+while(조건문=항상 참) {
+	실행코드;
+}
+```
+
+**주의할점**
+
+-무한반복
+
+-반복횟수
+
+
+**반복문의 구조**
+
+-초기화
+
+-카운터
+
+-조건문
+
+-증감
+
+
+**Do-while**
+
+최소한 한번은 실행하는 코드
+
+do를 먼저 실행하고, 그 다음 조건문을 만남. 
+
+참이면 다시 실행하고, 아니면 끝남
+
+```javascript
+ do {
+	실행할코드;
+}while(조건문);
+```
+
+
+
+**For**
+
+-간단한 반복문
+
+```javascript
+for(변수 초기화; 조건; 카운터) {
+	실행코드;
+}// 세미콜론 기준으로 공백으로 둬도됨. 
+```
+
+순서: 초기화->조건->실행코드->카운터
+
+
+
+-배열+반복문
+
+굉장히 편하게 배열에서 꺼내 쓸 수 있는 문법
+
+```javascript
+for(const item of fruits)
+	console.log(item);
+```
+
+-객체+반복문
+
+```javascript
+	//객체일 때
+	const user = {
+        name:"홍길동",
+        age:20,
+        isVaild:true,
+        email:"hong@mail.net"
+    }
+
+    //배열과 다르게 인덱스(번호)가 없기 때문에 반복문 사용이 어려움. 그래서 변형된 반복문
+    for(const u in user)
+        console.log(user[u]);
+    /* 키를 꺼내오는법
+    for(const u in user)
+        console.log(u);
+```
+
+for와 while은 조건문 안에 아무것도 넣지 않거나 true쓰면 무한반복됨.
+
+**반복문의 강제중지**
+
+-break: 완전 종료 
+
+-continue: 일시 종료
+
+반복문의 중첩
 
 
 
 ---
+
+### Function
+
+생산성 부분에서 굉장히 중요한 부분
+
+
+함수를 사용하는 이유
+
+-재사용성(유지보수)
+
+-생산성
+
+
+모듈화(=컴포넌트): 특정 기능을 재사용할 수 있게 따로 떼어내서 쓸 수 있게 만드는것.
+
+함수가 그런 기능
+
+
+---
+
+
 
 ### ASC**II** 코드
 
