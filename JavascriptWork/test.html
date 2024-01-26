@@ -5,10 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script>
-    for(let cnt = 0; cnt <= 10; cnt ++) {
-        
+    const users = [
+        {name:'홍길동', age:35, address:'서울'},
+        {name:'임꺽정', age:20, address:'인천'},
+        {name:'유비', age:45, address:'수원'},
+        {name:'관우', age:37, address:'경기'},
+        {name:'장비', age:29, address:'제주'},
+        ]
 
+    for( ; ; ) {
+        let value = window.prompt("이름을 입력하세요.:");
+        if(value == users.name) {
+            console.log("user.value");
+        }
+        break;
     }
+        
 </script>
 </head>
 <body>

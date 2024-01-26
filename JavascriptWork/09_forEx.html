@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+
+        //1번
+        let num = null;
+        let even = 0;
+        let single = 0;
+        for(let i = 1; i <= null; i++) {
+            if(i % 2 == 0 ) {
+                even += i; 
+            }
+            else if(i % 2 == 1) {
+                single += i;
+            }
+        }
+        console.log(`짝수의 합:${even}, 홀수의 합:${single}`);
+
+
         //2번 구구단
         let value = window.prompt("단수를 입력하세요: ");
         for(let i = value ; i < 10; i++ ) {
@@ -14,9 +30,6 @@
             break;
         }
 
-        
-
-        
     </script>
 </head>
 <body>

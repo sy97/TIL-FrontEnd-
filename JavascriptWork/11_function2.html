@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //인자가 있는 방식
+        //별 라인을 다르게하고싶다면?
+
+        function line(star, type) {//star, type=매개변수(paraneter)
+            for(let i = 0; i < star; i++) {
+                document.write(type);
+            } 
+            document.write("<br>");
+        }
+
+        line(40, "-");  //  여기에 입력하면 star가 받아서 여기 입력한 수만큼 출력, 입력된 수를 실인자라고 부름.(argument)
+        document.write("고객 관리 프로그램<br>");
+        line(30, "=");
+        document.write("1. 등록 <br>");        
+        document.write("2. 검색 <br>");
+        line(50, "*");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //반환값이 있는 방식
+
+        function hap(n1, n2) {
+            if(n1 === ' ') {
+                return;
+            }
+            document.write("<h2>두 수의 합계</h2>");
+            let num3 = n1 + n2;
+            return num3; // return방식
+            //return; 이라고만 쓰면 아무값도 없이 돌아가는것. -> retrun을 만나면 함수가 종료됨. 원위치로 돌아감.
+
+
+        }
+
+        let n1 = 10;
+        let n2 = 5;
+        //let num3 = hap(n1, n2); //여기서 호출했으니까 여기로 돌아와야함.
+        document.write("결과 : " + hap(n1, n2)); //여기서 바로 해줘도됨
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

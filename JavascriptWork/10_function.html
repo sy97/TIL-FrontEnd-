@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        
+        //인자가 없는 방식
         function line() {
-            document.write("*******************************<br>");
+            for(let i = 0; i < 50; i++) {
+                document.write("*");
+            } 
+            document.write("<br>");
         }
         //함수는 만들어놓았다고 실행되지 않음. 이름을 불러줘야함 -> 호출
+        //호출 : 함수가 있는 메모리로 가서 처리한 다음, 다시 돌아와서 다음 작업을 하는 것
+        //호출은 곧 interrupt -> 많이 쓰면 시스템 성능 낮아짐 
         line(); 
         document.write("고객 관리 프로그램<br>");
         line();

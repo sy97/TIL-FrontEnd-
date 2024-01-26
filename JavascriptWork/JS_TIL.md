@@ -530,10 +530,7 @@ for와 while은 조건문 안에 아무것도 넣지 않거나 true쓰면 무한
 
 ### Function
 
-생산성 부분에서 굉장히 중요한 부분
-
-
-함수를 사용하는 이유
+1.함수를 사용하는 이유
 
 -재사용성(유지보수)
 
@@ -544,6 +541,81 @@ for와 while은 조건문 안에 아무것도 넣지 않거나 true쓰면 무한
 
 함수가 그런 기능
 
+
+2.함수 작성 방법
+
+```javascript
+function 함수명(...) {
+	실행코드;
+}
+```
+
+3.호출방식
+
+-인자가 없는 방식
+
+```javascript
+function line() {
+for(let i = 0; i < 50; i++) {
+                document.write("*");
+            } 
+            document.write("<br>");
+        }
+        //함수는 만들어놓았다고 실행되지 않음. 이름을 불러줘야함 -> 호출
+        //호출 : 함수가 있는 메모리로 가서 처리한 다음, 다시 돌아와서 다음 작업을 하는 것
+        //호출은 곧 interrupt -> 많이 쓰면 시스템 성능 낮아짐 
+        line(); 
+        document.write("고객 관리 프로그램<br>");
+        line();
+        document.write("1. 등록 <br>");  
+        document.write("2. 검색 <br>");
+        line();
+```
+
+-인자가 있는 방식
+
+매개변수: paraneter / 실인자: argument 
+
+```javascript
+//인자가 있 방식
+//별 라인을 다르게하고싶다면?
+
+function line(star) { //satr=매개변수
+	for(let i = 0; i < star; i++) {
+	document.write("*");
+            } 
+        document.write("<br>");
+        }
+
+line(40);  //  여기에 입력하면 star가 받아서 여기 입력한 수만큼 출력.
+document.write("고객 관리 프로그램<br>");
+line(30);  
+document.write("1. 등록 <br>");  
+document.write("2. 검색 <br>");
+line(50);
+```
+
+-반환값이 있는 방식(return)
+
+*값은 반드시 하나만 반환할 수 있음.
+
+*함수를 강제로 종료할 때도 쓸 수 있음
+
+```javascript
+//반환값이 있는 방식
+
+function hap(n1, n2) {
+document.write("<h2>두 수의 합계</h2>");
+let num3 = n1 + n2;
+return num3; // return방식
+}
+
+let n1 = 41;
+let n2 = 5;
+//let num3 = hap(n1, n2); //여기서 호출했으니까 여기로 돌아와야함.
+document.write("결과 : " + hap(n1, n2)); //여기서 바로 해줘도됨
+
+```
 
 ---
 
