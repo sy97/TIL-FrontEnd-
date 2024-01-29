@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnload() {
+            const root = document.documentElement;
+            console.log(root.nodeName);
+            //html. 가장 상위 태그
+            console.log(root.nodeValue);
+            //null. 태그의 속성 알려줌, element는 null값, 텍스트노드는 텍스트나옴.
+            console.log(root.nodeType);
+            //1. 숫자별로 다른데, 1은 element node.
+
+            console.log("---------------------------")
+            const first = root.firstChild;
+            console.log(first.nodeName);
+            console.log(first.nodeValue);
+            console.log(first.nodeType);
+
+            console.log(root.lastChild.nodeName);
+            console.log(root.lastChild.nodeValue);
+            console.log(root.lastChild.nodeType);
+
+            console.log("---------------------------")
+            //span태그 접근
+            const body = document.documentElement.lastChild;
+            //html의 lastchild니까 body태그
+            //let span = body.firstElementChild;
+            let span = document.getElementById("a");
+            console.log(span);
+            console.log(span.nodeName);
+            console.log(span.nodeValue);
+            console.log(span.nodeType);
+
+            console.log("---------------------------")
+            //span태그 첫번째 자식요소 찾기
+            console.log(span.firstChild);
+            //first든 child든 "a"
+            console.log(span.firstChild.nodeName);
+            console.log(span.firstChild.nodeValue);
+            console.log(span.firstChild.nodeType);
+
+            console.log("---------------------------")
+            //p태그 찾기
+            console.log(span.nextElementSibling);
+            console.log(span.nextElementSibling.nodeName);
+            console.log(span.nextElementSibling.nodeValue);
+            console.log(span.nextElementSibling.nodeType);
+
+            console.log("---------------------------")
+            //두 번쨰 p태그 찾기
+            console.log(document.getElementsByTagName("p"));
+            console.log(document.getElementsByTagName("p").length);
+            console.log(document.getElementsByTagName("p").item(1).nodeName);
+            console.log(document.getElementsByTagName("p").item(1).nodeValue);
+            console.log(document.getElementsByTagName("p").item(1).nodeType);
+
+            console.log("---------------------------")
+            //속성값 찾기. span태그의 아이디 이름 불러오기
+            console.log(span.getAttribute("id"));
+            
+            //span 1,2,3불러오기
+            console.log(document.getElementById('a').getAttribute("id"));
+            console.log(document.getElementById('b').getAttribute("id"));
+            console.log(document.getElementById('c').getAttribute("id"));
+            
+
+            const spans = document.getElementsByTagName("span");
+            for(let i=0; i < spans.length; i++) {
+                let sp = spans.item(i);
+                console.log(`${i + 1}번 째 sapn name은 ${sp.getAttribute("name")}이다.`)
+            }
+
+
+
+
+        }
+    </script>
+</head>
+<body onload ="fnload();">
+    <span id ="a" name="span1">a</span>
+    <p>
+        <b> 진하게</b>test<span id="b" name="span2">b입니다.</span>
+    </p>
+    <div>
+        <p>p</p> <span id="c" name="span3">c</span>
+    </div>
+    
+</body>
+</html>

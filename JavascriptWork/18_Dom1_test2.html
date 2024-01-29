@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+            function fnload() {
+            console.log("----------속성 없을시-----------");
+            const root = document.documentElement;
+            //body
+            const body = root.lastChild;
+            const ch1 = body.firstElementChild
+            console.log(ch1.textContent);
+            const ch2 = ch1.nextElementSibling;
+            console.log(ch2.textContent);
+            const ch3 = ch2.nextElementSibling;
+            console.log(ch3.textContent);
+            
+            console.log("--------textcontent안쓰고--------");
+            //body-div
+            const e1 = body.firstElementChild;
+            //div-p1
+            const e2 = e1.firstElementChild;
+            console.log(e2.firstChild);
+            //div-p1-a1
+            const e3 = e2.firstElementChild;
+            console.log(e3.firstChild);
+            //div-p2
+            const e4 = e1.lastElementChild;
+            console.log(e4.firstChild);
+            //div-p2-a2
+            const e5 = e4.firstElementChild;
+            console.log(e5.firstChild);
+            
+
+            //body-p
+            const e6 = e1.nextElementSibling;
+            console.log(e6.firstElementChild.firstChild);
+
+            //body-p2
+            const e7 = e6.nextElementSibling;
+            console.log(e7.firstElementChild.firstChild);
+            
+
+            console.log("----------p 태그로-----------");
+            //class로 찾기
+            const p = document.getElementsByTagName("p");
+            for(let i = 0 ; i < p.length ; i++) {
+                console.log(p[i].textContent);
+            }
+
+            console.log("----------class로----------");
+            const c1 = document.querySelector(".inner-text");
+            console.log(c1.textContent);
+            const c2 = c1.nextElementSibling;
+            console.log(c2.textContent);
+            const c3 = document.querySelector(".outer-text");
+            console.log(c3.textContent);
+            const c4 = c3.nextElementSibling;
+            console.log(c4.textContent);
+
+            console.log("----------id로꺼내기----------");
+            //id로 찾아서 텍스트 출력하기
+            //id="first"
+            const p1 = document.getElementById("first");
+            console.log(p1.firstChild);
+            //id=chat-link
+            const a1 = document.getElementById("chat-link");
+            console.log(a1.firstChild);
+            //id=w3-link
+            const a2 = document.getElementById("w3-link");
+            console.log(a2.firstChild);
+            //id="second"
+            const p2 = document.getElementById("second");
+            console.log(p2.firstElementChild.firstChild);
+            //마지막 줄 all or nothnig(id없음)
+            const p3 = p2.nextElementSibling;
+            console.log(p3.firstElementChild.firstChild);
+            
+        }
+
+    </script>
+</head>
+<body onload="fnload();">
+    <div>
+        <p class="inner-text first-item" id="first">
+            HAPpy week
+            <a href="https://chat.netsong7.net" id="chat-link">netsong7</a>
+        </p>
+        <p class="inner-text second-item">
+            Happy Programming
+            <a href="https://www.w3schools.com" id="w3-link">W3schools</a>
+        </p>
+    </div>
+    <p class="outer-text first-item" id="second">
+        <b>
+            Programming is funny
+        </b>
+    </p>
+    <p class="outer-text">
+        <b>
+            aLL OR NOTHING
+        </b>
+    </p>
+</body>
+</html>

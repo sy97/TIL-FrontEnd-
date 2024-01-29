@@ -713,6 +713,9 @@ const child3 = document.getElementById('child122232'); //없는아이디를 입�
 console.log(child3);//null값 나옴
 ```
 
+**-document.getElementsByTagName : 가급적 쓰지않는게 좋다.**
+
+
 **-document.querySelector() : css 선택자로 검색**
 
 아이디가 없으면 태그로 접근하면 되지만, 태그가 너무 많기 때문에 css선택자로 접근
@@ -726,4 +729,24 @@ console.log(child1);
 //child라는 클래스가 2개지만 첫번째로 검색된 것만 가져옴. 하나만 가져오기때문에.
 ```
 
--document.querySelectorAll() : css 선택자로 검색한 모든 요소
+**-document.querySelectorAll(**) : css 선택자로 검색한 모든 요소 
+
+
+#### **어디서 사용가능한 속성인지 보는법**
+
+![1706501118928](image/JS_TIL/1706501118928.png)
+
+ 이건 노드에서 사용가능한 속성이라는 뜻
+
+
+-N.parentElement : 노드의 부모 요소를 반환
+
+-E. closest( ) : 자신을 포함한 조상 요소 중 "css 선택자 "와 일치하는 가장 가까운 요소를 반환
+
+-N.previousSibling / N.nextSibling : 노드의 이전 형제 또는 다음 형제 노드를 반환
+
+-E.previousElementSilbling/E.nextElementSibling
+
+-E.childern : 요소의 모든 자식을 반환
+
+-E.firstElementChild/E.lastElementChild
