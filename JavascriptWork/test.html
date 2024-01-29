@@ -5,22 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 <script>
-        const users = [
-            {name: '홍길동', age:35, address: '서울'},
-            {name: '임꺽정', age:35, address: '인천'},
-            {name: '유비', age:35, address: '수원'},
-            {name: '관우', age:35, address: '경기'},
-            {name: '장비', age:35, address: '제주'},
-            ]
-        const inputname = window.prompt("이름 : ")
-        
-        for(const user of users) {
-            if(user.name === inputname) {
-                document.write(`${user.name}, ${user.age}, ${user.address}`);
+        star(6);
+        function star(n) {        
+        for(let i = 1; i <= n; i++){
+            for(let j = 0; j < n - i; j++){
+                document.write("&nbsp");
             }
+            for(let k = 1; k <= i * 2 - 1; k++){
+                document.write("*");
+            }
+            document.write("<br>");
         }
-
-
+    }
 
 
 </script>

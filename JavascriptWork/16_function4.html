@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //선언식 (declaration)
+        function hello() {
+            console.log("hello~");
+        }
+
+        hello();
+
+        //표현식(expression)
+        const soyeong = function () {
+            console.log("soyeong");
+        }
+        soyeong();
+        //------------------------------------------------------------//
+
+        
+
+        //선언식
+        function hello(a, b) {
+            return a+b;
+        }
+        console.log(hello(5,10));
+
+        //표현식
+        const hello2 = function(a,b) {
+            return a+b;
+        }
+        console.log(hello2(3,4));
+
+        //화살표함수 //ECMA6 이후 문법
+        const hello3 = (a, b) => a+b; //return들어갈 때는 중괄호 안함. 두 줄 이상인 코드일 때는 중괄호 필수
+        //const hello3 = (a, b) => { return a+b;} 원래는 이렇게 된건데 다 생략된것.
+        console.log(hello3(5,29));
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

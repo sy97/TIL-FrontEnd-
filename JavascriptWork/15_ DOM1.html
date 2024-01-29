@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnLoad() {
+            /*Node vs Element */
+            const parent = document.querySelector('.parent');
+            //parent클래스에 접근. 접근한 결과를 변수에 저장 
+
+            console.log(parent);
+            //console에 div parent 정보 뜸
+            console.log(parent.childNodes); 
+            //Node. console에 parent의 요소 노드들 뿐만 아니라 주석 노드와 같인 비 요소 노드들 정보 뜸. 이건 노드에서 사용가능한 속성
+            console.log(parent.children);
+            //Elment. 태그만 뜸. 비 요소 노드는 뜨지않음.
+        
+            console.log("-------------------------------------------------");
+
+            /*검색 api */
+            //id가 있으면 id에 접근하는게 가장 쉬운 접근법
+            const e1 = document.getElementById('child2'); //클래스와 다르게 이름만 찍으면됨.
+            console.log(e1);
+            const e2 = document.getElementById('child122232'); //없는아이디를 입력하면?
+            console.log(e2);//null값 나옴
+
+            const e3 = document.querySelector('.child');
+            //원래 class는 꾸며주려고 만든거지 id처럼 검색을 위한 속성은 아님.하지만 id가 없기 때문에 css 선택자 사용.
+            console.log(e3);
+            //child라는 클래스가 2개지만 첫번째로 검색된 것만 가져옴. 하나만 가져오기때문에.
+            
+            const e4 = document.querySelector('#child2');
+            //css 접근 방식으로 id 쓸 때는  getElementById 와 다르게 #id 로 써줘야함.
+            console.log(e4);
+            //child라는 클래스가 2개지만 첫번째로 검색된 것만 가져옴. 하나만 가져오기때문에.
+
+            //2번째 child div에 id가 없다면 이렇게 접근
+            const e5 = document.querySelector('.child:last-child');
+            console.log(e5);
+
+            //검색한 모든걸 가져오고 싶을 때
+            const e6 = document.querySelectorAll('.child');
+            console.log(e6);
+            console.log(e6[1]);//배열형태로 데이터가 던져졌으니 인덱스로 접근 가능
+            console.log(e6[0].textContent);//child클래스의 텍스트만 뽑아오는 기능
+
+            //반복문으로 처리해서 가져오기도 가능.
+            for(let i = 0; i < e6.length; i++) {
+                console.log(e6[i].textContent);
+            }
+
+            //객체 아이템을 모두 가져오는 변형된 for문
+            //but ECMA6이후로 이런 문법은 지양함
+            for(let i of e6)
+                console.log(i.textContent);
+
+            /*
+            화살표함수를 이용하여 배열 값 불러오기
+            child6는 어찌됐든 간에 Node 아니면 Elements타입
+            */
+            
+            e6.forEach(e => console.log(e.textContent))
+            /*이 객체 안에 있는 숫자만큼 반복문을 돌려주겠다.
+            ()안에 함수를 인자로 만들어야함. 결국  chil6.forEach라는 함수를 여러번 호출하게끔 하는것.
+            'e'는 child6안에 들어있는 객체를 하나씩 꺼내서 저장해주는 변수. 매개변수가 하나일 때는 괄호 안써도됨.
+            */
+
+            console.log("-------------------------------------------------");
+            const e7 = document.querySelector(".child");
+            console.log(e7.parentElement);
+            //첫번째 child에 접근했고, 그 요소의 부모요소가 누구인지 찾아주는 기능. 
+
+            console.log(e7.closest('div'));
+            console.log(e7.closest('body'));
+            //가장 가까운 요소를 찾아주는 함수.
+
+            console.log(e7.previousSibling);
+            /*
+            이전 형제가 누군지.
+            #text라고 나옴. 트리구조상 주석이 나와야 정상같은데.
+            #text는 우리눈에 보이지 않는 공백을 가리킴.
+            공백 없이 주석과 div 붙여서 쓰면 주석이 나옴.
+            */
+
+
+        }
+
+
+
+    </script>
+</head>
+<body onload="fnLoad();"> <!--이 페이지가 실행될 때 = 메모리에 올라갔을 때 = 화면상에 보여질 때 적용하는 이벤트 속성-->
+    <div class = "parent">
+        <!--주석-->
+        <div class = "child">1</div>
+        텍스트1
+        <div id="child2" class = "child">2</div>
+        텍스트2
+        <div class = "child">3</div>
+    </div>
+
+    <!-- 트리 구조
+
+                            html
+        head                                        body
+    meta  meta   title                              parent
+                text(document)        주석   child1 child2 텍스트1 텍스트2
+                                                1     2
+            -->                                             
+</body>
+</html>
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //1번
+        let num = 3;
+        document.write("짝수의 합 : " + hap(num).even + "홀수의 합 : " + hap(num).single);
+
+        function hap(num) {
+        let even = 0;
+        let single = 0;
+        //여기에 써주지 않으면, 함수가 호출될 때마다 값이 누적되므로 원하는 값이 나오지 않음.
+        for(let i = 1; i <= num; i++) {
+        if(i % 2 == 0 ) {
+        even += i; 
+        }
+        else if(i % 2 == 1) {
+        single += i;
+        }
+        }
+        return {even, single};
+        }
+
+        //2번 구구단
+        let value = window.prompt("단수를 입력하세요: ");
+        cal(value);
+
+        function cal(n) {
+            for(let i = n ; i < 10; i++ ) {
+            for(let j = 1; j < 10; j++) {
+                console.log(i+"*"+j+"="+(i*j));
+            }
+            break;
+        }
+        }
+        
+        //3번 검색예제
+
+        let value = window.prompt("이름을 입력하세요.: ")
+        findUser(value);
+
+        function findUser(value) {
+        const users = [
+        {name:'홍길동', age:35, address:'서울'},
+        {name:'임꺽정', age:20, address:'인천'},
+        {name:'유비', age:45, address:'수원'},
+        {name:'관우', age:37, address:'경기'},
+        {name:'장비', age:29, address:'제주'},
+        ]
+
+        for(let i = 0; i < users.length; i++) {
+            if(value == users[i].name) {
+                console.log(users[i]);
+                
+            }
+            
+        } 
+        console.log("사용자를 찾을 수 없습니다.");
+        return null;
+    }
+        /*
+        ex)
+        value = 유비
+        i=0, 0 < 5, 유비 != 홍길동, if문 나옴, for문으로 돌아가서 i=1
+        i=1, 1< 5, 유비 != 임꺽정, if문 나옴,for문으로 돌아가서 i=2
+        i=2, 2<5, 유비 == 유비, 맞으니까 콘솔찍고 브레이크. 
+        */
+
+        //4.const arr = [ 20, 13, 10, 4, 6, ...] 위의 데이터 중에서 최대값 구하기(정렬 x, 특정 함수로 해결하면 안됨 ! 순수하게 코드로)
+        let numbers = [20, 4, 6, 84, 32, 55];
+        console.log(Math.max(...numbers));
+
+        /*5.전자계산기를 반복문으로 처리하시오
+        한 번 입력해서 끝내지말고, 반복돌면서 실행될 수 있게.
+        끝나는 조건은 연산자에 x를 입력하면 종료.
+        */
+        
+        let num1 = window.prompt("첫 번째 숫자를 입력하세요.:");
+        let num2 = window.prompt("두 번째 숫자를 입력하세요.:");
+        let operator = window.prompt("사칙연산 중 하나를 입력하세요.(x 입력시 프로그램 종료.):");
+            function calculation(num1, num2) {
+            for( ; ; ) {
+            if(operator == "+") {
+            result = Number(num1) + Number(num2);
+            }
+            else if(operator == "-") {
+            result = Number(num1) - Number(num2);
+            }
+            else if(operator == "*") {
+            result = Number(num1) * Number(num2);
+            }
+            else if(operator == "/") {
+            result = Number(num1) / Number(num2);
+            }
+            else if(operator == "x") {
+            console.log("프로그램 종료");
+            break;
+            }    
+            console.log("결과 : " + num1 + operator + num2 + "=" + result);  
+            }
+            }
+
+        /* 6.피라미드
+
+            *
+           ***
+          *****
+         *******
+        *********
+
+            */
+        
+        star(6);
+        function star(n) {        
+        for(let i = 1; i <= n; i++){
+            for(let j = 0; j < n - i; j++){
+                document.write("&nbsp");
+            }
+            for(let k = 1; k <= i * 2 - 1; k++){
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+    </script>
+</head>
+<body>
+    <pre>
+        
+        1. 숫자를 입력해서 입력한 숫자만큼 반복돌며 짝수와 홀수의 합을 구하시오
+        ex/
+        숫자입력: 5
+        1-5까지의 합계인데, 짝수 따로의 합계, 홀수의 따로의 합계
+        ----------------------------------------------------------------
+        
+        2. 단수 입력받아 구구단출력
+        단수 입력: 2
+        2 * 1 = 2
+        ...
+        ----------------------------------------------------------------
+        3.검색예제
+        const users = [
+            {name:'홍길동', age:35, address:'서울'},
+            {name:'임꺽정', age:20, address:'인천'},
+            {name:'유비', age:45, address:'수원'},
+            {name:'관우', age:37, address:'경기'},
+            {name:'장비', age:29, address:'제주'},
+        ]
+        이름을 입력받아 해당 사람의 정보를 출력하는 프로그램 만들기. 
+        홍길동이라고 입력하면 홍길동의 나이와 주소 나오게 
+        ----------------------------------------------------------------
+
+        4.const arr = [ 20, 13, 10, 4, 6, ...]
+        위의 데이터 중에서 최대값 구하기(정렬 x, 특정 함수로 해결하면 안됨 ! 순수하게 코드로)
+
+        ----------------------------------------------------------------
+        5.전자계산기를 반복문으로 처리하시오
+        한 번 입력해서 끝내지말고, 반복돌면서 실행될 수 있게.
+        끝나는 조건은 연산자에 x를 입력하면 종료.
+
+        ----------------------------------------------------------------
+        6. 정삼각형
+            *
+           ***
+          *****
+         *******
+        *********
+        
+    </pre>    
+</body>
+</html>
