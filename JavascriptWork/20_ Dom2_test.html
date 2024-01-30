@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let cnt = 0;
+        //함수 안에 적어주면 함수가 호출될 때마다 0으로 초기화되므로 카운트되지 않음
+        function fnAppendItem() {
+            cnt++;
+            let newItem = document.createElement("div");
+            
+            //<div id ="item1"></div>
+            
+            //id는 이름이 다 달라야하기 때문에 이렇게 처리해줘야함
+            newItem.setAttribute("id", `item${cnt}`);
+            
+            //<div id ="item1">새로 추가된아이템[1] <input type ="button" value="삭제"/>< /div>
+        
+            newItem.innerHTML = /* html */ `새로 추가된 아이템[${cnt}] <input type = "button" value="삭제" onclick='fnDeleteItem(${cnt})' />`;
+            
+            //newItem을 넣고자 하는 div에 id로 접근
+            let itemDiv = document.getElementById("itemList");
+            itemDiv.appendChild(newItem);    
+        }
+            
+        //삭제기능도 만들기
+        function fnDeleteItem(cnt){ //몇번째것이 선택되었는지 나와야하기때문에 매개변수가 있어야함.
+            let item = document.getElementById("item" + cnt);
+            if(item !== null) {
+            item.parentNode.removeChild(item);
+            }
+        }
+        
+        //3초 후 이미지 띄우기
+        function fn3sImage( ) {
+            let div = document.querySelector('.container');
+            //div.innerHTML = /*html*/ `<img src='./Koala.jpg'/>`;
+            
+            //img태그만들기
+            let e_img = document.createElement("img");
+            //img태그 안에 이미지넣기
+            e_img.src = "./Koala.jpg";
+            //container안에 이미지 넣기
+            div.append(e_img);
+            
+        }
+
+    </script>
+</head>
+<body onload="setTimeout(fn3sImage, 3000);">
+    <input type = "button" value="추가" onclick="fnAppendItem();" />
+    <div id ="itemList"></div>
+    <hr/>
+    <div class="container">
+        <h2>Image Loading ...</h2>
+        3초 후에 이미지가 로드됩니다.
+    </div>
+</body>
+</html>

@@ -697,10 +697,9 @@ The Document Object Model, 문서 객체 모델
 
 -노드들을 구분하는 이유는 노드들마다 쓸 수 있는 API가 다르기 때문
 
-
 #### 검색
 
-**-document.getElementById() : id 속성으로 검색** 
+**-document.getElementById() : id 속성으로 검색**
 
 아이디로 접근하는게 제일 쉬운방법이지만, 아이디를 다 만들어놓진 않음.
 
@@ -715,7 +714,6 @@ console.log(child3);//null값 나옴
 
 **-document.getElementsByTagName : 가급적 쓰지않는게 좋다.**
 
-
 **-document.querySelector() : css 선택자로 검색**
 
 아이디가 없으면 태그로 접근하면 되지만, 태그가 너무 많기 때문에 css선택자로 접근
@@ -729,15 +727,7 @@ console.log(child1);
 //child라는 클래스가 2개지만 첫번째로 검색된 것만 가져옴. 하나만 가져오기때문에.
 ```
 
-**-document.querySelectorAll(**) : css 선택자로 검색한 모든 요소 
-
-
-#### **어디서 사용가능한 속성인지 보는법**
-
-![1706501118928](image/JS_TIL/1706501118928.png)
-
- 이건 노드에서 사용가능한 속성이라는 뜻
-
+**-document.querySelectorAll(**) : css 선택자로 검색한 모든 요소
 
 -N.parentElement : 노드의 부모 요소를 반환
 
@@ -750,3 +740,59 @@ console.log(child1);
 -E.childern : 요소의 모든 자식을 반환
 
 -E.firstElementChild/E.lastElementChild
+
+#### 생성, 조회, 수정
+
+-document.creatElement( ) : 메모리에만 존재하는 새로운 HTML요소를 생성하고 반환.없는 태그 만들어주는거.
+
+-E.prepend( ), E.append( ) : 노드를 첫번째 혹은 마지막 자식으로 삽입(여러 개 추가 가능)
+
+-E.remove( ) : 요소 제거 
+
+-E.insertAdjacentElement( ) : 대상 요소의 지정한 위치에 새로운 요소를 삽입
+
+    insertAdjacentElement(위치, 새로운요소) : 아래의 네군데에 지정가능
+
+    `<!--beforebegin-->`
+
+    `<div class = "target">`
+
+    `<!-- afterbegin-->`
+
+    내용
+
+    `<!--beforeend-->`
+
+    `</div>`
+
+    `<!--afterend-->`
+
+-N.insertBefore(추가할 노드, 참조할 노드) : 부모 노드의 자식인 참조노드의 이전 형제로 노드를 추가한다. 
+
+-N.contains( ) : 주어진 노드가 자신을 포함한 후손인지 확인 
+
+-N.textContent : 노드의 모든 텍스트를 얻거나 변경한다.
+
+-E.innerHTM : 요소의 모든 html내용을 하나의 문자로 가져오거나, 새로운 HTML을 지정한다. createlement 할 필요 없음. 
+
+-E.dataset : 'data-' 속성값을 얻거나 지정한다. 태그에 데이터를 저장할 수 있는 속성.
+
+-E.tagName : 요소의 태그명을 반환
+
+-E.id : 요소의 id속성값을 얻거나 지정한다.
+
+-E.className : 요소의 class속성값을 얻거나 지정한다. 
+
+-E.classList: 요소의 class속성값을 제어
+
+    .add( ), .remove( ), .toggle( ), .contains( )
+
+-E.getAttribute("속성명"), E.setAttribute("속성명", "값");
+
+-E.hasAttribute("속성명")
+
+-E.removeAttribute("속성명")
+
+-E.style : 요소의 style속성의 css속성값을 얻거나 지정한다. (inline 방식으로 css지정할 때 쓰는것)
+
+-window.getComputedStyle( ) : 요소에 적용된 스타일 객체를 반환

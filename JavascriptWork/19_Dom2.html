@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnload(){
+            /*createElement( ) */
+            let e_div = document.createElement("div");
+            //메모리에 만들어져만 있는 상태. html에는 안보임
+            console.log(e_div);
+            //이렇게 찍으면 <div></div> 보임
+            
+            /*prepend( )->앞, append( )->뒤 */
+            let parent = document.querySelector(".parent");
+            e_div.textContent = "Hello";
+            //div태그 사이에 텍스트 넣으려고 할 때 사용가능.
+            /*parent.append(e_div);
+            parent.append("world!")
+            */
+            
+            console.log(parent);
+            parent.append(e_div, "world!")
+            //맨 아래에 hello div, worold들어가있음.
+            //이렇게 한번에 써주기도 가능
+            
+            //잎쪽에 없는 주석 만들기
+            Comment = new Comment('안녕하세요.');
+            parent.prepend(Comment);
+
+            console.log("---------------------------");
+            /* insertAdjacentElement( ) */
+            let child1 = document.querySelector(".child");
+            let e_span1 = document.createElement("span");
+            e_span1.textContent = "insertAdjacentElement";
+            child1.insertAdjacentElement('beforeend', e_span1);
+
+            console.log("---------------------------");
+            /* insertbefore( ) 왜 안되지..????*/
+            let e_span2 = document.createElement("span");
+            e_span2 = "강소영님!";
+
+            
+
+            console.log("---------------------------");
+            /* contais() */
+            console.log(parent.contains(child1)); //true
+            console.log(document.body.contains(parent)); //true
+            console.log(document.body.contains(child1));//true
+            console.log(parent.contains(parent));//true
+            console.log(parent.contains(document.body));//flase
+
+            console.log("---------------------------");
+            /* innerHTML */
+            console.log(parent.innerHTML);//안에 있는 모든 요소들이 나옴. html형식으로 나옴.
+            console.log(parent.innerText);//텍스트노드만 가져옴
+            console.log(parent.textContent);//줄바꿈처리가 안된다는게 차이
+
+            parent.innerHTML += "<Span style ='color:red'>hello</span>"; 
+            //할당연산자에 의해 기존값 다 사라지고 이것만 들어감. 그래서 연산자 += 해줘야함.
+            
+            //parent.textContent += "<Span style ='color:red'>hello</span>";
+            //이렇게하면 문자자체로만 추가됨.
+
+            /*속성값 처리*/
+            console.log(parent.tagName);//div
+            console.log(e_span1.tagName);//span
+
+            child1.id = "child1";//id값을 줄 수도 있음.
+            console.log(child1.id);
+            console.log(child1);
+            
+            child1.className += " child1 active"; //class 이름 추가해줄수있음
+            console.log(child1.className);
+
+            let str = "hello wolrd~~";
+            let obj = {a:1, b:2};
+            parent.dataset.helloworld = str;
+            console.log(parent);//date-helloworld="hello world~"추가되어있음.
+            parent.dataset.obj = JSON.stringify(obj);
+            // 압축된 형태로, 객체로 들어가져있음. 그래서 무슨값인지 확인이안됨.
+            // 이 때 써주는게 JSON.stringify( );
+            console.log(parent);
+            console.log(parent.dataset.helloworld);//helloworld라는 데이터값 꺼내올 수 있음.
+            console.log(parent.dataset.obj);//객체형태로 꺼내짐
+            console.log(JSON.parse(parent.dataset.obj));//json쓰면 문자형태로 꺼내짐.
+            
+
+        }
+    </script>
+</head>
+<body onload="fnload();">
+    <div class="parent">
+        <div class="child">1</div>
+        <div class="child">2</div>
+    </div>
+</body>
+</html>
