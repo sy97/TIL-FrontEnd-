@@ -19,7 +19,7 @@
             //<div id ="item1">새로 추가된아이템[1] <input type ="button" value="삭제"/>< /div>
         
             newItem.innerHTML = /* html */ `새로 추가된 아이템[${cnt}] <input type = "button" value="삭제" onclick='fnDeleteItem(${cnt})' />`;
-            
+            console.log(newItem);
             //newItem을 넣고자 하는 div에 id로 접근
             let itemDiv = document.getElementById("itemList");
             itemDiv.appendChild(newItem);    
