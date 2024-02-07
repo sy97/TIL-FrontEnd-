@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    const book = function(title, author) {
+        this.title = title; 
+        this.author = author;
+    }
+    /* 오른쪽 title은 매개변수로 넘어온 변수임. this.title은 인스턴스 변수. 매개변수로 넘어온 title을 this.title이라는 저장소에 저장.
+    class라는 보따리 하나 만들음.
+    이 안에는 title과 author라는 변수. = 인스턴스 변수 or 멤버변수
+    이 안에 들어가는 함수는 멤버함수나 메서드라고 불러야함.
+    클래스는 설계도. 설계도가 있으면 똑같은걸 만들 수 있음. 붕어빵틀같은 존재
+    */
+
+    //클래스를 사용하기 위해 객체 생성
+    let b1 = new book("노인과 바다", "헤밍웨이"); // 실제메모리를 만듬. 그 메모리의 위치를 가리키는게 this.
+    console.log(b1.title, b1.author); //그 주소를 찾아가서 값 꺼내기.
+
+    let b2 = new book("홍길동전", "허균"); 
+    console.log(b2.title, b2.author); 
+
+    //값을 수정하기위해  new book을 새로 만들면, 또 새로운 메모리가 생기는 것이므로 안됨.
+    //값을 수정하는 메서드. 
+    book.prototype.setValue = function(t, a) {
+        this.title = t;
+        this.author = a;
+    }
+    b1.setValue("노인과 강","해밍코드");
+    console.log(b1.title, b1.author);
+
+    /*--------------------------------------------*/
+    //const fruits = ['APPLE', 'BANANA', 'CHERRY'];
+    //원래는 아래처럼 하는게 정석.
+    const fruits = new Array('APPLE', 'BANANA', 'CHERRY');
+    //자바스크립트가 array라는 클래스를 이미 만들어놓은것. 그래서 그 안에 애플 바나나 체리라는 객체 넣어준것.
+    console.log(fruits.length);
+    console.log(fruits.includes('APPLE'));
+    
+    Array.prototype.soyeong = function() {
+        console.log("내가만든 메서드 :", this);
+
+    }
+    //array는 설계도. fruits는 객체. this= 주소. 
+    fruits.soyeong();
+
+</script>    
+</head>
+<body>
+    
+</body>
+</html>

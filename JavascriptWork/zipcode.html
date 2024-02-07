@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주소검색</title>
+    <script>
+        function fnAddress(si, gu, gun) {
+            let addr = si+ " " + gu + " " + gun;
+            //alert(addr);//window.alter로 안써도됨.
+            //document.f1.addr.value = addr;
+            opener.document.f1.addr.value = addr;
+            //openr: 나를 열어준 부모가 누구인지 찾아가는것.
+            //그래서 부모한테 이 값 전달해줌.
+            window.close();
+            //이 팝업창 종료.
+        }
+    </script>
+</head>
+<body>
+    <a href="#" onclick="fnAddress('서울시','종로구','효자동')">서울시 종로구 효자동</a><br>
+    <a href="#" onclick="fnAddress('서울시','강남구','테헤란로')">서울시 강남구 테헤란로</a><br>
+    <a href="#" onclick="fnAddress('수원시','팔달구','매교동')">수원시 팔달구 매교동</a><br>
+    <br>
+    
+    <form name="f1">
+        <input type="text" name="addr" />
+    </form>
+</body>
+</html>

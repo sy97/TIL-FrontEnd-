@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+        const a = () => {console.log('A');}
+        const b = () => {console.log('B');}
+
+        a(b);//함수의 주소만 넘겨서 필요할 때 호출되게끔.
+        //a는 괄호가 있으니까 우리가 호출한거지만, b는 a가 호출하게끔 인자값으로 넘겨주는것.
+        */
+    
+        const a = param => {
+            console.log('A');
+            param();
+        }
+        const b = () => {console.log('B');}
+        a(b); //b가 param이 된것. 
+
+        //const sum = (a,b) => a+b;
+        //console.log(sum(1,3));
+
+        //setTimeout(함수, 지연시간);
+        //setTimeout(() => {console.log('hello')}, 3000 );
+        //원래 이거 쓰려면 함수를 따로 만들어서 적어줬어야하는데, 한번만 쓸 함수를 그렇게 만드는건 낭비
+        //그럴 때 화살표함수를 바로 써주면됨.
+        //호출해주는게 아니므로, 인자값으로 넘어가니까 이것도 callback 함수. 
+        
+
+        /*
+        const sum = (a,b) => {
+            setTimeout(return, 3000);
+        }
+        consol.log()
+        */
+                    //return값이 settimeout에게 던져짐. 결과값을 sum이 가져와야함.
+            //그렇다고 앞에 return을 한 번 더 붙여줄 수는 없음.
+            //결과값을 어떻게 가져와야할까
+        /*  
+            const sum = (a,b,func) => {
+            setTimeout(func(a+b), 3000);
+
+        }
+        console.log(sum(1,3, (val)=>{console.log(val)}));
+        */
+        
+        /*reduce(함수,초기값): 배열에서만 쓸 수 있는 콜백함수 */
+        function sum(...rest) {
+            console.log(rest);
+            //return rest.reduce(function(acc, cur){return acc + cur},0);
+            return rest.reduce((acc,cur) => acc+cur, 0);
+            //화살표함수로 바꾸면
+        }
+        /*reduce
+        acc=초기값 0
+        cur=현재배열값인 1, 2에서 1을 뽑아냄.
+        0+1 = 1
+        return 1 -> acc
+        1+2(두번째 배열값) = 3
+        return 3 -> acc. 
+        호출결과가 그래서 안나옴. sum에게 던져줘야함.
+        그래서 최종 결과값인 acc를 리턴하게 맨 앞에 return적어줘야함.
+
+        */
+        console.log(sum(1,2));
+        console.log(sum(1,2,3,4));
+        console.log(sum(1,2,3,4,5,6,7,8,9,10,11));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

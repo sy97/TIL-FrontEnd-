@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnOpen() {
+            window.open("zipcode.html","", "left=100, to=100, width=320, height=320");
+        }
+    </script>
+</head>
+<body>
+    <form name="f1"><!--서버전송-->
+        <input type="button" value="주소검색" 
+            onclick="fnOpen()"/><br><br>
+        <input type="text" name="addr" size="30" />
+
+    </form>
+</body>
+</html>

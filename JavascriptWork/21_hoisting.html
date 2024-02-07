@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        hello();
+        hi();//이건 오류남. 무명함수 방식은 호이스팅 적용안됨.
+        function hello() {
+            console.log("hello~");
+        }
+        //원칙적으로는 hello 생성 전에 호출먼저 했으니 에러가 나야하지만 에러 안남.
+
+        hi = function () {
+            console.log("hi");
+        }
+        hi();
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

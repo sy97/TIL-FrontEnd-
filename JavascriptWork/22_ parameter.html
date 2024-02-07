@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Default Value*/
+        function sum(a,b,c=3) {
+        //만약 내가 대부분 c에 3을 전달한다면, 매번 3을 전달하는건 효율적이지 않으니 c=3을 넣어줄수있음.
+            return a + b + c;
+        }
+        console.log(sum(1,2));
+        //굳이 매개변수 갯수 안맞춰도 sum(1,2,3)과 같은값 나옴.
+        console.log(sum(1,2,7));
+        //다른값 넣어주면 오버라이딩됨.
+        console.log("-------------------------------");
+
+        /*객체의 Destructuring Assignmnet*/
+        const user = {name: "홍길동", age : 35};
+        function getName ({name}) {
+            //원래 방법: u라는 객체의 이름만 받아서 넘기기
+            //return u.name;
+
+            //객체의 구조 할당 방법
+            //const {name} = user; = funciton getName({name})과 같음.
+            return name;
+        }
+        console.log(getName(user)); //=u
+
+        function getEmail ({email="이메일이 없습니다."}) {
+            return email;
+        }
+        console.log(getEmail(user));
+        //default value를 응용해서, 값이 없을 경우를 지정해줄 수 있음. 
+
+        console.log("-------------------------------");
+
+        /*배열의 Destructuring Assignmnet*/
+        const fruits = ['Apple', 'Banana', 'Cherry'];
+        const number = [1,2,3,4,5,6,6,7,8];
+        function getSecondItem([a, b, c]) {
+            //예전방식
+            //return date[1];
+            return b;
+        }
+        console.log(getSecondItem(fruits));
+        console.log(getSecondItem(number));
+        //배열이 여러개일 때
+        const fruits2 = ['Apple', 'Banana', 'Cherry', 'strawberry'];
+        function getThirdItem([,,a]) {
+            //몇번째 뽑아낼건지만 적어주면됨.
+            return a;
+        }
+        console.log(getThirdItem(fruits2));
+
+        /*------------------------------------------------------------------------*/
+        /*rest 매개변수*/
+        function hap(a,b,...rest) {
+            console.log(rest);
+            //이럴경우, hap(1,2,3,4)면 3,4만 나옴.
+        }
+        
+        console.log(hap(1,2)); //function hap(a,b)
+        hap(1,2,3,4); //funciton hap(a,b,c,d)
+        hap(1,2,3,4,5,6,7);
+        //데이터가 몇개가 될지 모르는 상황일 때는 ..? 
+        //이렇게 데이터가 몇개일지 모를 때 매개변수를 받아주는 함수 = rest
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
