@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+    
+
+    .option {
+        background-color: white;
+        top: -14px;
+        right: -20px;
+        position: relative;
+        height: 50px;
+        padding: 10px;
+    }
     .container {
         border: 1px solid black;
         margin: 10px;
@@ -20,49 +30,64 @@
     </style>
 </head>
 <body>
-    <form>
-        <span>고객명 :</span><input type="text" size="15" maxlength="15" ><br><br>
-        <span>전화번호 :</span><input type="number" size="15" maxlength="15" ><br><br>
-        <span>E-mail :</span><input type="email" size="15" maxlength="15" ><br><br>
-    
+    <form><!--서버전송을 위한  태그-->
+        <!--고객정보-->
+        <div class="information" style="margin-left: 10px;">
+            <span>고객명 :</span><input type="text" size="15" style="margin-left: 10px;"><br><br>
+            <span>전화번호 :</span><input type="number" size="15" style="margin-left: 10px;"><br><br>
+            <span>E-mail :</span><input type="email" size="15" style="margin-left: 10px;"><br><br>
+        </div>    
+        <br><br>
+
+        <!--피자선택-->
+        <div class="pizzaList" style="margin-left: 10px;">
+            <span>피자 선택 :</span>
+                <select>
+                <option selected="selected">피자를 선택하세요.</option>
+                <option>치즈 퐁듀 파이어 미트</option>
+                <option>블록버스터4</option>
+                <option>글로벌 레전드4</option>
+                <option>블랙앵거스 스테이크</option>
+                <option>베스트 콰트로</option>
+                <option>블랙타이거 슈림프</option>
+                </select>
+        </div>
         
-        <span>피자 선택 :</span>
-    
-        <select >
-            <option selected="selected">피자를 선택하세요.</option>
-            <option>치즈 퐁듀 파이어 미트</option>
-            <option>블록버스터4</option>
-            <option>글로벌 레전드4</option>
-            <option>블랙앵거스 스테이크</option>
-            <option>베스트 콰트로</option>
-            <option>블랙타이거 슈림프</option>
-        </select>
-        <br>
-    
-        <div class="text">피자 사이즈</div> 
-        <div class = "container">
-            
-            <br><br>
+        <br><br>
+
+        <!--피자사이즈 선택-->
+        <div class="container">
+            <sapn class="option">피자사이즈</sapn>
+            <br>
                 <input type="radio" name="사이즈" />Small<br> <br>
                 <input type="radio" name="사이즈" />Medium<br><br>
                 <input type="radio" name="사이즈" />Large<br><br>
         </div>
+        <br><br>
+
+        <!--피자토핑 선택-->
         <div class = "container">
-            <div class="text">토핑 선택</div>
-            <br><br>
+            <sapn class="option">토핑 선택</sapn>
+            <br>
                 <input type="checkbox" name="토핑" />베이컨<br> <br>
                 <input type="checkbox" name="토핑" />치즈<br><br>
                 <input type="checkbox" name="토핑" />양파<br><br>
                 <input type="checkbox" name="토핑" />버섯<br><br>
         </div>
-        
+
+        <!--배송시간-->
+        <div class = "time" style="margin-left: 10px;">
             <span>희망 배송 시간 : </span>
             <input type="time" /><br>
             <br><br>
-    
+        </div>  
+        
+        <!--배송 요청사항 및 주문-->
+        <div class = "submit" style="margin-left: 10px">
             <span>배송 요청 사항</span>
             <textarea rows="4" cols="20"></textarea><br><br>
             <input type="button" value="주문 하기" /><br>
+        </div>    
     </form>
 </body>
 </html>
