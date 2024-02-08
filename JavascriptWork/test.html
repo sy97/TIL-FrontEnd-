@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="/JavascriptWork/JS/log.js"></script>
 <script>
-    function fnOpen() {
-        window.open("test2.html","","left=100, to=100, width=320, height=320");
+
+        function fnCall2() {
+            log("fnCall2함수가 호출됨.")
+        }
+    //태그를 건드리지 말고 해보자.
+    //페이지가 로딩됐을 때 함수를 호출 하는것 
+        window.load = function() {
+            
     }
 </script>       
 </head>
 <body>
-    <form name="f1">
-    <input type="button" value="주소검색" onclick="fnOpen()"/>
-    <br><br>
-    <input type="text" name="addr" />
-    </form>
+    <button>BUTTON</button>
+    <button>BUTTON2</button>
+
+    <br/><br/>
+    <div id="debugConsole" style="border: 1px solid red;"></div>
+
 </body>
 </html>
