@@ -5,17 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        let timer;
+        //변수의 유효범위때문에 전역변수로 선언해줘야함.
+
         function fnOpen() {
             window.open("zipcode.html","", "left=100, to=100, width=320, height=320");
         }
         //zipcode.html이 자식이됨. zipcode.html에서 여기로 정보를 넘겨주려면 주소 알아야하는데 open함수가 다 갖고있음.
+    
+        function fnshowWatch() {
+            let today = new Date(); //date클래스 이미 생성되어 있고, 거기에새로운 객체 생성
+            //console.log(today);
+            let msg = `현재 시간은 ${today.getHours()}시 ${today.getMinutes()}분 ${today.getSeconds()}초 입니다.`;
+            document.f1.watch.value = msg; // 박스안에 넣기.
+            timer = setTimeout(fnshowWatch, 1000);
+            //재귀함수. 자기가 자기를 불러내면서 반복효과가 일어남.
+            //timer = setInterval(fnshowWatch, 1000);
+        }
+
+        function fnStop() {
+            clearTimeout(timer);
+            /*어떤 타이머를 중지시킬것인가를 넣어줘야함.
+            setTimeout을 중지시켜야하는데, 따로 주소를 받아놓지 않아서 중지가 어려움.
+            그래서 전역변수 timer를 선언해놓고, setTimeout의 주소를 받아놔야함.
+            */
+        }
+
+        function fnRestart() {
+            //setTimeout(fnshowWatch, 1000);
+            setInterval(fnshowWatch, 1000);
+            /*
+            setTimeout과 똑같음.but setTimeout은 1번만 호출돼서 우리가 재귀함수가 되도록 
+            설정해준것과 달리, 자체적으로 1초마다 실행됨
+            */
+        }
+
+        function fnOpenLink() {
+        /*
+        내가만든 기능. 근데 이동이 아니라 새 창이 열리고,비활성화할때도 이동돼서 별로인듯..
+        window.open("https://www.naver.com");
+        */
+        
+        //비활성화 시킬때는 이동시키지 않기.
+        if(document.f1.chk.checked)
+            location.href="http://www.naver.com";
+        //새 창이 아니라 아예 이동.
+
+        document.f1.chk.checked = false;
+        //내가 추가한 기능.
+        }
+
+        function fnImgInfo() {
+            div =document.getElementById("info");
+            div.innerHTML = "첫번째 이미지의 폭 : " +
+                document.images[1].width + "px <br/>";
+            div.innerHTML += "첫번째 이미지의 높이 : " +
+                document.images[1].height + "px <br/>";
+            //두개 다 나와야하니까 +=로 합해주기.
+            //innerHTML은 오버라이딩되기 때문에, 덧셈할당을 해줘야함.
+        }
+
+        function fnImgSize() {
+            document.images[1].width *= 2;
+            //documnet.images[1].width = document.images[1].width * 2
+            //곱셈할당을 해서 한줄에 쓸 수있다.
+            document.images[1].height *= 2;
+        }
     </script>
 </head>
-<body>
+<body onload="fnshowWatch()">
     <form name="f1"><!--서버전송-->
         <input type="button" value="주소검색" 
             onclick="fnOpen()"/><br><br>
-        <input type="text" name="addr" size="30" />
+        <input type="text" name="addr" size="50" />
+        <hr/>
+
+        <input type="text" name="watch" size="50" />
+        &nbsp;&nbsp;&nbsp;
+        <input type="button" value="현재시간 시작" onclick="fnRestart()"/>
+        <input type="button" value="현재시간 중지" onclick="fnStop()" />
+        <hr/>
+
+        <input type="checkbox" name="chk" onclick="fnOpenLink()"/>네이버로이동
+        <br/><br/>
+        <!--새로고침-->
+        <input type="button" name="bt" value="새로고침" onclick="location.reload();" />
+        <hr/>
+
+        <table>
+            <tr>
+                <td><img src="../htlmlwork/images/duke_box.gif"/></td>
+                <td><img src="../htlmlwork/images/hero2.png"/></td>
+            </tr>
+        </table>
+        
+        <input type="button" value="정보보기" onclick="fnImgInfo();"/>
+        <input type="button" value="이미지 키우기" onclick="fnImgSize();"/>
+        
+        <div id="info"></div>
 
     </form>
 </body>

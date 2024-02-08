@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./JS/log.js"></script>
+    <script>
+        
+        function fnCall1() {
+            log("fnCall1함수가 호출됨.")
+        }
+        function fnCall2() {
+            log("fnCall2함수가 호출됨.")
+        }
+
+        /*
+        function fnCall3(ev){
+            log("fnCall3함수가 호출됨.")
+            log(ev.target) //이벤트 소스. 
+            log(ev.id) 
+            log(ev.type) // 이벤트 핸들러가 무엇인지.
+            console.log(ev.target)
+            console.log(ev.id)
+            console.log(ev.type)
+        } //매개변수 선언하면 이벤트가 호출된 곳의 주소지를 받아오는것. 
+        여기서만 쓸거니까 화살표 함수로 아래에 만들기
+        */
+        
+
+        //html태그를 건드리지말고 <body onload=fnload()>와 같은 효과
+        window.onload = function () {
+            let btn = document.querySelector("button");
+
+            //2개 등록하는거
+            //btn.addEventListener("click", fnCall1, false);
+            //btn.addEventListener("click", fnCall2, false);
+            
+            //이렇게 간단하게도 가능.
+            btn.onclick = fnCall1;
+            btn.onclick = fnCall2;
+            
+            //이벤트 삭제
+            btn.removeEventListener("click", fnCall1, false);
+
+            let btn2 = document.getElementById("btn2");
+            btn2.addEventListener("click", ev => {
+                log(ev.target)
+                log(ev.id)
+                log(ev.type)}, false);
+                
+            btn2.addEventListener("keydown", (ev) => {
+                log(ev.key); //tab으로 포커스줘서 키 누르면 어떤키가 눌렸는지 보여짐.
+            },false);
+
+            btn2.addEventListener("wheel",(ev) => {
+                console.log(ev);
+            },false);
+        }
+
+
+    </script>
+</head>
+<body>
+    <button>BUTTON</button>
+    <button id="btn2">BUTTON2</button>
+    <!--f12안누르고 결과를 바로 확인할 수 있는 모듈-->
+    <br/><br/>
+    <div id="debugConsole" style="border: 1px solid red;"></div>
+
+</body>
+</html>

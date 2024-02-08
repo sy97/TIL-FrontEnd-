@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fnOut() {
+            document.querySelector("input").style.backgroundColor='yellow';
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="I'm a button." 
+        onmouseover="this.style.backgroundColor='red';"
+        onmouseout="fnOut()"/>
+        <!--this: 현재 실행중인 메서드의 객체. -->
+    <!--이벤트소스 :버튼 / 이벤트 클래스: onmouseover-->
+
+</body>
+</html>
