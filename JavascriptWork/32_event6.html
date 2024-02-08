@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        .parent {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 10px solid;
+            background-color: cornflowerblue;
+            overflow: auto;
+        }
+
+        .child {
+            width: 200px;
+            height: 1000px;
+            border: 10px solid;
+            background-color: coral;
+        }
+
+        .child.action {
+            background-color: purple;
+        }
+
+    </style>
+    <script>
+        window.onload = function() {
+            const p = document.querySelector(".parent");
+            const ch = document.querySelector(".child");
+            ch.addEventListener("mousedown", e => {
+                console.log(e.clientX, e.clientY);
+                //198, 180 -> 내가 누른 마우스의 좌표
+                console.log(e.which, e.button);
+                //(익스플로러의 잔재 ,button:마우스 왼(0) 가운데(1) 오(2))
+                //ch.classList.add('action');
+            });
+            /*ch.addEventListener('mouseup',e=>{
+                ch.classList.remove('action');
+            })
+            */
+            
+            //마우스 올려놨다 뗐을 때
+            ch.addEventListener("mouseenter",() => {
+                ch.classList.add('action');
+            })
+            ch.addEventListener("mouseleave",() => {
+                ch.classList.remove('action');
+            })
+
+            //마우스 위치 실시간 추적
+            ch.addEventListener("mousemove",(e)=>{
+                console.log(e.offsetX, e.offsetY);
+            })
+
+            //오른쪽마우스 눌렀을 때 
+            ch.addEventListener("contextmenu",(e)=>{
+                e.preventDefault(); //오른쪽마우스 눌러도 아무것도 뜨지 않게하기 
+                console.log(e);
+            })
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+
+        </div>
+    </div>
+</body>
+</html>

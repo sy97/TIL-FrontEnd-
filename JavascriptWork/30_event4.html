@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #grand {border: 3px solid red}
+        #parent {border: 3px solid green}
+        #child {border: 3px solid blue}
+    </style>
+    <script src="/JavascriptWork/JS/log.js"></script>
+    <script>
+        window.onload = function ( ) {
+            const child = document.getElementById("child");
+            const parent = document.getElementById("parent");
+            const grand = document.getElementById("grand");
+
+            grand.addEventListener('mousedown', ev => {
+                log("grand");
+            } ,{once:true});
+        
+            parent.addEventListener('mousedown', ev => {
+                log("parent");
+                ev.stopPropagation();
+
+            } ,{capture:false});
+
+            child.addEventListener('mousedown', ev => {
+                log("child");
+                ev.stopPropagation();
+                //버블링이 방지되어 하나만 나온다.
+            } ,false);
+            
+            /*
+            child를 누르면, 위에서부터 이벤트발생한 곳인 child까지 쭉 타고 내려옴.그래서 다 실행됨.=캡쳐링
+            false로하면 다른것도 뜨지만 타고내려오진 않음.
+            버블링: 이벤트 처리되고 나서 다시 위로 타고올라가는거. 
+            그래서 캡쳐링 false해줘도 버블링때문에 child를 눌러도 child, parent,grand나옴.           
+            */
+        }
+    </script>
+</head>
+<body>
+    <div id="grand">
+        grand의 상단
+        <div id="parent">
+            parent의 상단
+            <div id="child">
+                child
+            </div>
+            parent의 하단
+        </div>
+        grand의 하단
+    </div>
+
+
+    <br><br>
+        <div id="debugConsole" style="border: 2px solid cornflowerblue;"></div>
+</body>
+</html>
