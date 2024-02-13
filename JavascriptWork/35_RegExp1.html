@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const str = `
+            010-1234-5678
+            thesecond@gmail.com
+            Hello world!
+            https://www.omdbapi.com/?apikey=7035c60c&s=frozen
+            The quick brown fox jumps over the lazy dog.
+            hello@naver.com
+            http://localhost:1234
+            동해물과 백두산이 마르고 닳도록
+            abbcccddddeeeee`;
+
+            /* 객체 생성 방식 */
+            const regexp = new RegExp('the','g'); 
+            //'g'옵션 주지 않으면 무조건 첫번째꺼만 가져옴.
+            //global주면, 모든 지역 다 찾아서 가져옴.
+
+            //대소문자 가리지말고 모든 the 찾기
+            const regexp2 = new RegExp('the','gi');
+
+            //이 데이터들 중에, the라는 문자열이 있으면 꺼내서 위의 객체에 담기.
+            console.log(str.match(regexp));
+            console.log(str.match(regexp2));
+
+            /*리터럴 방식*/
+            const regexp3 = /the/gi ;
+            console.log(str.match(regexp3));
+            //값은 위와 가음.
+            
+            /*-------------------------------------------------------------*/
+
+            /*API*/
+            //api를 쓰려면 객체가 있어야함.
+            const regexp4 = /fox/gi;
+            //fox라는 단어를 대소문자 무시하고 다 찾기
+
+            console.log(regexp4.test(str)); //있으면 true , 없으면 false
+            console.log(str.match(regexp4));
+            console.log(str.replace(regexp4, 'cat'));//the brown fox -> the brown cat으로 바뀌어있음.
+
+            /*-------------------------------------------------------------*/
+            /*플래그*/
+            console.log(str.match(/the/gi));
+            console.log(str.match(/\.$/gim)); 
+            // .으로 끝나는거 찾으려고하는데, dog.있는데 null로나옴. 여러줄인데 한줄만 봐서.
+            //그래서 m을 적어줘서 각각의 줄을 인식시켜줘야함.
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
