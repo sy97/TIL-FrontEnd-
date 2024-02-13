@@ -7,18 +7,16 @@
     <!--모둘화 하려면 타입에 모듈이라고 선언해줘야함.-->
     <script type="module" src="main.js"></script>
 
+        <!--인터프리터 언어이기 때문에 script를 아래부분에 적어줘야함.
+        html이 먼저 실행될 수 있게 해줘야함.그럴때 사용하는 속성이 defer-->
+    <script>
+        //console.log(str_main);
+    </script>
+
 </head>
 <body>
     <div class="parent">
         <h1>Module Test</h1>
     </div>
-
-    <!--인터프리터 때문에 script를 아래부분에 적어줘야함.-->
-    <script>
-        //console.log(str_main);
-        const parent = document.querySelector(".parent");
-        console.log(parent.innerHTML);
-    </script>
-
 </body>
 </html>
