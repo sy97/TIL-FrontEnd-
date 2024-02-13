@@ -24,7 +24,7 @@
             child1.addEventListener("click", ev => {
                 child2.dispatchEvent(new Event("click"));
                 child2.dispatchEvent(new Event("wheel"));
-                child2.dispatchEvent(new Event("mousedown"));
+                child2.dispatchEvent(new Event("click"));
             })
         }
     </script>

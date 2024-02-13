@@ -18,8 +18,9 @@
 
             grand.addEventListener('mousedown', ev => {
                 log("grand");
-            } ,{once:true});
+            } );
         
+            
             parent.addEventListener('mousedown', ev => {
                 log("parent");
                 ev.stopPropagation();
