@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            padding: 10px;
+            border: 4px solid coral;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        form.active {
+            border-color: cornflowerblue;
+        }
+    </style>
+    <script>
+        /*keydown, keyup */
+        window.onload = function() {
+            //keydown: 눌렀을 때
+            const input1 = document.querySelector("input");
+            input1.addEventListener("keydown",ev=>{
+                if(ev.key == 'Enter'){ //ev.keyCode == 13
+                    //이거보다는 아스키코드로 하는게 더 간단함.
+
+                    console.log(input1.value);
+                } 
+                
+            })
+
+            //keyup:눌렀다 뗐을때
+            /*input1.addEventListener("keyup",ev =>{
+                console.log(ev.key);
+            })*/
+
+        
+        /*-----------------------------------------------------------*/
+            const f = document.querySelector("form");
+            const inputs = document.forms[0].querySelectorAll("input");
+            inputs.forEach (param => {
+                //포커스 했을 때
+                param.addEventListener("focus",()=>{
+                    f.classList.add("active");
+                })
+                
+                //포커스 없앴을 때
+                param.addEventListener("blur",()=>{
+                    f.classList.remove("active");
+                })
+
+                //input박스에 값이 입력될 때 
+                param.addEventListener("input", e => {
+                    console.log(e.target.value);
+                })
+
+                //input박스에 값 입력하고 다른곳으로 포커스 둘 때
+                //input보다는 change많이씀
+                param.addEventListener("change", e => {
+                    console.log(e.target.value);
+                })
+            
+            });
+
+            /*입력값 아스키코드로 */
+            const textIn = document.getElementById("textIn");
+            textIn.addEventListener("keydown", e => {
+                //아스키코드로 바꿔주는속성
+                document.getElementById("txtKeyCode").value = e.keyCode;
+
+                //ctrl과 shift같이 눌렀는지 여부 
+                document.getElementById("txtCtrl").value = e.ctrlKey;
+                document.getElementById("txtShift").value = e.shiftKey;
+            })
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" />
+    <hr/>
+    <form>
+        <fieldset><!--표준태그는 아님-->
+            <legend>로그인</legend><!--테두리에글자-->
+        <input type="text" placeholder="ID"/>
+        <input type="password" placeholder="PW"/>
+
+        <!--별도로 이벤트를 건드리지 않음. 이미 기능 있음-->
+        <button type="submit">전송</button>
+        <button type="reset">취소</button>
+        </fieldset>
+    </form>
+    <hr/>
+    키보드 입력 : <input type="text" id="textIn" />
+    <br><br>
+    키코드 값 : <input type="text" id="txtKeyCode" readonly />
+    <br><br>
+    Ctrl 값 : <input type="text" id="txtCtrl" readonly />
+    <br><br>
+    Shift 값 : <input type="text" id="txtShift" readonly />
+    
+
+</body>
+</html>
