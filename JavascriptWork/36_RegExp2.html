@@ -26,7 +26,11 @@ console.log(str.match(/^h.../gmi));
 // 모든 문자가 아니라 그냥 문자 '.'이 오게하는것.
 console.log(str.match(/\.com/g));
 
-
+console.log(str.match(/\.com$/g));//null
+console.log(str.match(/...\.com$/gm));//ail.com / ver.com
+console.log(str.match(/fox|dog/g));//fox, dog
+console.log(str.match(/\.com|fox|dog/gm));
+console.log(str.match(/https?/g));//ab? => http(s) => s가 있을수도 있고, 없을 수도 있는거.
     </script>
 </head>
 <body>
