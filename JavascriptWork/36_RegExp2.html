@@ -72,11 +72,22 @@ console.log(str.match(/(?<=과).+/g));//'과' 이하부분.
 console.log(str.match(/\d+\-\d+\-\d+/g));
 console.log(str.match(/\d{3}\-\d{4}\-\d{4}/g));
 console.log(str.match(/\d{1,}\-\d{1,}\-\d{1,}/g));
-//console.log(str.match(/(?:\d+\-?)+/g));
+//예원 전화번호
+console.log(str.match(/\d+\-(?:\S+)/g));
+console.log(str.match(/010+(?:\S+)/g)); 
+console.log(str.match(/.+(?<=\-).+/g));
+//민재 전화번호
+console.log(str.match(/\d+(?:-\d+)+/g));
+console.log(str.match(/\d+\W+?\d+\W+?\d+/g));
 
 //이메일
-console.log(str.match(/\w+\@\w+\.com/gm));
-console.log(str.match(/.+(?=\@)\@(?<=\@).+/g));
+console.log(str.match(/\w+@\w+\.com/gm));
+console.log(str.match(/.+(?=@)@(?<=@).+/g));
+//예원 이메일
+console.log(str.match(/.+(?<=@).+/g));
+//민재 이메일
+console.log(str.match(/\w+@\w+\.com/g));
+console.log(str.match(/[a-z]+@[a-z]+\.com/g));
 
     </script>
 </head>
