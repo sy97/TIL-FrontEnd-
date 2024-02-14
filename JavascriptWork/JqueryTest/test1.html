@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="./jquery-3.7.1.min.js"></script> 제이쿼리 다운받아서 실행하는 방법-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!--cdn으로-->
+    <script>
+        /*javascript*/
+        /* window.onload = () => {
+        const myElement = document.getElementById("id01");
+        document.getElementById("demo").innerHTML = "The text from the id01 paragraph is: " + myElement.innerHTML;
+        }
+        */   
+        
+
+        /*j query*/
+        //jqeury는 모든 시작이 $(=jQeury)로 시작.
+        $(document).ready(function() { //=window.onload. 이게 없으면 얘도 실행 안됨. body아래쪽에 적어주던가 해야함.
+        const myElements = $("#id01");
+        $("#demo").text("The text from the id01 paragraph is: " + myElements[0].innerHTML);
+        });
+    
+    </script>
+
+</head>
+<body>
+    <h2>Finding HTML Elements by Id</h2>
+    <p id="id01">Hello World!</p>
+    <p id="id02">Hello Sweden!</p>
+    <p id="id03">Hello Japan!</p>
+
+    <p id="demo"></p>
+
+
+
+</body>
+</html>
