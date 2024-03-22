@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+    <!-- 부트스트랩 준비는 이걸로끝. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+	</script>
+</head>
+<body>
+	<h1>반응형 웹UI 구현</h1>
+	<!-- 이 div들을 한줄로만들어주는 부트스트랩 클래스. -->
+	<div class="row">
+		<!-- 4는 칸수. 12칸중에 첫번째 div는 4칸을 차지하겠다. 
+		중간은 화면 크기 계산.(해상도). 가운데거가 없으면 반응형으로 동작 안함.
+		여러개 적어줄 수도 있음. 라지면 3칸, 중간사이즈며 4칸. 화면 작으면 6칸까지보여주게.-->
+		<div class="col-lg-3 col-md-4 col-sm-6" style="background-color: red">A</div>
+		<div class="col-lg-3 col-md-4 col-sm-6" style="background-color: green">B</div>
+		<div class="col-lg-3 col-md-4 col-sm-12" style="background-color: blue">C</div>
+	</div>
+</body>
+</html>
