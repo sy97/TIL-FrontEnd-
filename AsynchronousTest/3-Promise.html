@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = () => {
+            return new Promise((resolve)=>{ //callback을 해결하기위한 객체. resolve는 b함수를 호출함.
+                setTimeout(()=>{
+                    console.log(1)
+                    resolve();
+                    },1000);
+                });    
+            }; 
+            
+
+        const b = () => {
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    console.log(2)
+                    resolve();},1000);
+            });
+                
+            };
+
+
+        const c = () => {
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                console.log(3)
+                resolve();},1000);
+        });
+            
+        };
+
+        const d = () => {console.log(4)};
+
+        /* 근데 이렇게쓰면 콜백지옥과 다를게없음.
+        a().then(()=>{ //promise객체를 던져줬기 때문에 then을 쓸 수 있음. 그럼 여기서 b를 호출해줌.
+            b().then(()=>{
+                c().then(()=>{d()})
+            });
+        });
+        */
+
+        /*
+        a() .then(()=> b()) //여기서 파고들어가지말고, return으로해서 던져주자.
+            .then(()=> c()) //return은 기본으로 들어가있는거니까 더 간단하게 줄이기가능.
+            .then(()=> d())
+            .then(()=> console.log("끝"));
+        */
+
+        //이렇게까지 줄이기 가능.
+        a() .then(b) 
+            .then(c) 
+            .then(d)
+            .then(()=> console.log("끝"));
+
+            fetch('https://www.omdbapi.com/?apikey=7035c60c&s=frozen');
+    </script>
+</body>
+</html>

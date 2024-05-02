@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*전형적인 동기식 코드*/
+        /*
+        const a = () => {console.log(1)}
+        const b = () => {console.log(2)}
+
+        a();
+        b();
+        */
+
+        /*비동기 방식으로 바꾸기*/
+        //settimeout안에 들어가있는게 콜백함수.우리가 호출하는게 아니라 시스템이 1초후에 호출함.
+        /*
+        const a = () => {
+            setTimeout(()=>{console.log(1)},1000)
+        }
+
+        const b = () => {console.log(2)}
+
+        a();
+        b();
+        */
+        
+        //지금은 b먼저 실행되고 a가 실행되는데, 이걸 제어해서 a,b순서대로 하고싶다면?
+        //b를 매개변수로 넘겨줘서 b가 호출될수있도록.
+        /*
+        const a = (callback) => {
+            setTimeout(()=>{
+                console.log(1)
+                callback();}
+                ,1000);
+        }
+
+        //a,b,c 순서대로 호출되게하려면
+        const b = (callback) => {
+            setTimeout(()=>{  
+                console.log(2)
+                callback();
+            },1000)
+        };
+
+
+        const c = (callback) => {
+            setTimeout(()=>{
+                console.log(3);
+                callback();
+            },1000)
+        };
+
+        const d = () => {console.log(4)};
+
+        //콜백함수
+        a(()=>{
+            b(()=>{
+                c(()=>{
+                    d();
+                })
+            })
+        });
+        */
+
+        //실행순서 제어
+        const getMovies = (movieName) => {
+            return new Promise((resolve) => {
+                fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${movieName}`)//백틱으로 묶어줘야 변수가 인식됨.
+                .then((res)=>{return res.json()})
+                .then((res)=>{
+                    console.log(res)
+                    resolve();
+                });
+            })
+        };
+
+        //실행순서가 매번달라짐. 그래서 콜백지옥으로 순서제어하기.
+
+        getMovies('frozen') .then(()=>{
+                                        console.log("겨울 왕국!");
+                                        return getMovies('avengers');
+                                    })
+                            .then(()=>{
+                                        console.log("어벤져스!");
+                                        return getMovies('avatar');
+                            })
+                            .then(()=>{
+                                        console.log("아바타!")});
+
+        
+        /*
+        getMovies('frozen',() => {
+            console.log("겨울 왕국!")
+            getMovies('avengers',() => {
+                console.log("어벤져스!")
+                getMovies('avatar',() => {
+                    console.log("아바타!")});
+            });
+        });
+        */
+    </script>
+</body>
+</html>
