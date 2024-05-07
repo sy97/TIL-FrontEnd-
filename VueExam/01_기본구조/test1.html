@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--vue cdn-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>기본구조</h2>
+        <!--vue에서 처리한 결과를 보여줄 위치-->
+        {{message}}
+    </div>
+    <script>
+        /*
+        //vue를 사용하려면 객체를 생성해야함. 
+        //이 안에 중괄호 사용해서 데이터처리해주면됨.
+        Vue.createApp({
+            data : function(){
+                return { message : "Hello Vue~~"}
+            }
+        }).mount("#app"); //mount() : app라는 아이디를 가진 곳에 적용하겠다는 메서드
+        */
+
+        /*두번째 방법*/
+        const {createApp} = Vue
+
+        createApp({
+            data : function(){
+                return { message : "Hello Vue2~~"}
+            }
+        }).mount("#app");
+
+    </script>
+</body>
+</html>

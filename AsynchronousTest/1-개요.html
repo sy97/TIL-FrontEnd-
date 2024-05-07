@@ -34,15 +34,15 @@
         */
         
             //xmlhttp방식보다 간편한 비동기방식
-            fetch('https://www.omdbapi.com/?apikey=7035c60c&s=frozen')
+            fetch('https://www.omdbapi.com/?apikey=7035c60c&s=frozen') //fetch의 리턴값이 promise객체이기때문에 then사용가능.
                 .then(res=> res.json()) //res : 서버로부터 받은 문자열 데이터
-                .then(res=> {
+                .then(res=> { //res : 자바스크립트 객체로 바뀐 데이터
                     console.log(res)
                     console.log(1);
                     console.log(2);
                     console.log(3);
                 
-                }); //res : 자바스크립트 객체로 바뀐 데이터
+                }); 
 
                 // res에는 위의 서버가 던져준 데이터가 들어가있음. 근데 값이 너무 많으므로 json메서드를 써서 자바스크립트 객체로 마들어줌.
                 //그렇게 리턴받은 값을 또 then안의 매개변수가 받음.

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--vue cdn-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!--JQuery-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>기본구조</h2>
+        <!--vue에서 처리한 결과를 보여줄 위치-->
+        {{message}}
+    </div>
+
+    <div id="jq">
+        <h2>JQuery로 출력한 내용</h2>
+        <p class="sub1"> </p>
+    </div>
+
+    <script>
+        const {createApp} = Vue
+
+        createApp({
+            data : function(){
+                return { message : "Hello Vue~~"}
+            }
+        }).mount("#app");
+        
+        //JQuery문법
+        $(".sub1").html("Hello~~ JQuery");
+    </script>
+</body>
+</html>

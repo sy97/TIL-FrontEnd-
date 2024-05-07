@@ -48,12 +48,31 @@
         };
 
         
+        
         delayAdd(5)
             .then((res)=>{console.log(res)})
-            .catch((err)=>{console.error(err)}); //catch: 실패했을 때만 이 메서드 
+            .catch((err)=>{console.error(err)}) //catch: 실패했을 때만 이 메서드 
+            .finally(()=>{console.log("Done!")});
 
-        
- // 성공시와 실패시의 코드를 각각 인자로 전달
+    //async() await로 변경
+    /*
+    const wrap = async() =>{
+        try{ 
+        const result = await delayAdd(15);
+        console.log(result);
+        }
+
+        catch(err){
+        console.error(err);
+        }
+
+        finally{
+            console.log("Done!");
+        }
+    } 
+
+    wrap();
+    */
     </script>
 </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--vue cdn-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul v-for="user in data.list"> <!--data의 list를 반복돌며 user에 담기.-->
+            <li>이름 : {{user.name}}</li>
+            <li>나이 : {{user.age}}</li>
+            <li>주소 : {{user.address}}</li>
+        </ul>
+    </div>
+    <script>
+        var data = { //객체를 list라는 배열로 묶고, data 변수로 넘겨주기.
+            list: [{ 
+                name: "user_1",
+                age: 10,
+                address: "address_1"
+            }, {
+                name: "user_2",
+                age: 20,
+                address: "address_2"
+            }, {
+                name: "user_3",
+                age: 30,
+                address: "address_3"
+            }]
+        }
+
+        const {createApp} = Vue; //vue객체 생성하여 createapp변수에 할당
+        createApp({ //createapp변수에 data()라는 이름의 함수 생성
+            data(){
+                return  {data} //var data를 리턴하는 함수
+            }
+        }).mount("#app"); //app이라는 아이디를 가진 html요소와 연결
+    </script>
+</body>
+</html>
