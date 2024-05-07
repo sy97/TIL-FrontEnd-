@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul class="list" >
+            <li v-for="user in data.list"> name : {{user}}</li>
+        </ul>
+
+        <div>
+            <p>데이터 추가</p>
+            <p>
+                    <span>name:<input type="text" class="user-name" v-model="newUser"></span><br> <!--newUser라는 이름으롣 데이터를 받아옴-->
+            <p>
+                    <button class="btn-add-user" v-on:click="addUser"> 추가</button>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var data = {
+            list:["user01", "user02", "user03", "홍길동"],
+            newUser : "" 
+        }
+
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return {data : data} //data라는 이름으로 var data 넘겨주기.
+            },
+            methods : {
+                addUser : function(){
+                this.data.list.push(this.newUser);
+                }
+            }
+        
+        }).mount("#app");
+    </script>
+</body>
+</html>
