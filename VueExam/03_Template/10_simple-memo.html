@@ -10,15 +10,23 @@
     <h1>심플 메모장</h1>
     <div id="app">
         <div>
-        메모 입력 : <input type="text" v-model="newMemo"/>
-        <button @click="addMemo()">추가</button>
+            메모 입력 : <input type="text" v-model="newMemo"/>
+            <template v-if="">
+                <button v-on:click="addMemo()">추가</button>
+            </template>
+
+            <template v-if="">
+                <button>적용</button>
+                <button @click="cancleMemo()">취소</button>
+            </template>
         </div>
-        
+
+
         <div>
             <ul >
                 <li v-for="(memo, index) in list"> 메모 : {{ memo }} <!--수정, 삭제를 해야하기 때문에 키값을 받아야햠. -->
-                    <button>삭제</button>
-                    <button>수정</button>
+                    <button @click="deleteMemo(index)">삭제</button><!--삭제할 내용 전달-->
+                    <button @click="updateMemo(index, memo)">수정</button><!--수정할 인덱스와 내용 전달-->
                 </li>
             </ul>
         </div>
@@ -43,8 +51,33 @@
                     return; //중지
                 }
                     this.list.push(this.newMemo);
+                },
+
+                //삭제기능
+                deleteMemo(index){
+                /*
+                    //console.log(index); 인덱스가 맞게 매칭되는지 확인
+                    let idx = this.list.findIndex((memo)=>{ //list에 있는 값을 하나씩 꺼내서 memo라는 매개변수에 전달 
+                        console.log(targetMemo,memo)
+                        return memo == targetMemo
+                    }); //이 리스트에서 몇번쨰 인덱스인지 찾아서 리턴해주면 그 위치를 idx로 받기.
+                
+                    if(idx != -1){ //제대로 위치를 찾았을 경우에만
+                        this.list.splice(idx, 1 );//리스트에서 1개 삭제
+                    }
+                */
+                    this.list.splice(index, 1);
+                },
+
+                updateMemo(index, targetMemo){
+
+                },
+
+                cancleMemo(){
+
                 }
             }
+
         }).mount("#app")
     </script>
 </body>
