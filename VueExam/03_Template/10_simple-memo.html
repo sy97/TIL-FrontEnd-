@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>심플 메모장</h1>
+    <div id="app">
+        <div>
+        메모 입력 : <input type="text" v-model="newMemo"/>
+        <button @click="addMemo()">추가</button>
+        </div>
+        
+        <div>
+            <ul >
+                <li v-for="(memo, index) in list"> 메모 : {{ memo }} <!--수정, 삭제를 해야하기 때문에 키값을 받아야햠. -->
+                    <button>삭제</button>
+                    <button>수정</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let data = {
+            list : ["memo1", "memo2", "memo3"],
+            newMemo : "" 
+            
+        }
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return data;
+            }
+        ,
+        methods : {
+            addMemo(){
+                if(this.newMemo.length == 0){ //입력 안했다면
+                    alert("메모를 입력하세요.");
+                    return; //중지
+                }
+                    this.list.push(this.newMemo);
+                }
+            }
+        }).mount("#app")
+    </script>
+</body>
+</html>

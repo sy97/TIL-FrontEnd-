@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+    <h1>v-if</h1>
+    <div id="app">
+        <button @click="toggle()">토글</button>
+
+        <!--여러개를 처리해야할 때. 타임리프는 th:block으로했다면 여기는 template으로 묶어주면됨.-->
+        <template v-if="visible">
+            <div>보이고1</div>
+            <div>보이고2</div>
+            <div>보이고3</div>
+        </template>
+
+        <template v-else>
+            <div>숨기고1</div>
+            <div>숨기고2</div>
+            <div>숨기고3</div>
+        </template>
+        <br><br>
+        <div id="hakjum">
+            <div>
+                점수 입력 : <input type="text" v-model="jumsu"/>
+            </div>
+            <div v-if="jumsu == 'A'">A 학점입니다.</div>
+            <div v-else-if="jumsu == 'B'">B 학점입니다.</div>
+            <div v-else-if="jumsu == 'C'">C 학점입니다.</div>
+            <div v-else-if="jumsu == 'D'">D 학점입니다.</div>
+            <div v-else-if="jumsu == 'E'">E 학점입니다.</div>
+            <div v-else>F 학점입니다.</div>
+        </div>
+    </div>
+    
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return {visible: true, jumsu:""}
+            }
+            }).mount("#app")
+        
+    </script>
+</body>
+</html>
