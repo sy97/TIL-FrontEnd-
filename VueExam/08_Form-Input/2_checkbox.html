@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            입력값(true, false) : <input type="checkbox" v-model="msg1"/><br>
+            결과 : {{msg1}}
+        </div>
+        <hr>
+        <div>
+            입력값(참, 거짓) : <input type="checkbox" v-model="msg2"
+            true-value="참" false-value="거짓"/><br> <!--true,false가 아닌 다른 값으로 해주고싶을떄-->
+            결과 : {{msg2}}
+        </div>
+        <hr>
+        <div>
+        <label><input type="checkbox" value="철수" v-model="msg3"/>철수<br></label>
+        <label><input type="checkbox" value="영희" v-model="msg3"/>영희<br></label>
+        <label><input type="checkbox" value="영수" v-model="msg3"/>영수<br></label><!--label달아주면 글자클릭해도 체크됨.-->
+        결과 : {{msg3}}
+        </div>
+        <hr>
+        <div>
+            <!--하나만 선택되늰 라디오버튼-->
+            <label><input type="radio" value="철수" v-model="msg4"/>철수<br></label>
+            <label><input type="radio" value="영희" v-model="msg4"/>영희<br></label>
+            <label><input type="radio" value="영수" v-model="msg4"/>영수<br></label>
+            결과 : {{msg4}}
+        </div>
+        <hr>
+        <div v-for="mem in memberlist">
+            <label><input type="radio" :value="mem" v-model="msg5" />{{mem}}</label>
+        </div>
+            결과 : {{msg5}}
+    </div>
+
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return {msg1 : "true",
+                        msg2 : "거짓",
+                        msg3 : ['영수'], //msg3는 배열로 넘어옴.
+                        msg4 : ['영수'],
+                        memberlist : ['철수', '영희', '영수', '철이'],
+                        msg5 : "철이"
+
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>

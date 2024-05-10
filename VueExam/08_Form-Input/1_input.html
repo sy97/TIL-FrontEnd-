@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            입력 값: <br>
+            <textarea rows="10" v-model="msg"></textarea>
+        </div>
+        <div style="white-space: pre-line;">{{msg}}</div>
+        
+        <hr>
+        <h2>문자를 숫자로</h2>
+        <div>
+            입력1 : <input type="text" v-model.number="result1"/><br><!--.number만 적어주면 알아서 숫자로 파싱됨.-->
+            입력2 : <input type="text" v-model.trim="result2" /><br><!--공백없애기-->
+        </div>
+        <div>
+            입력1에 +10을 한 결과는 {{ result1 +10 }}이다. <br>
+            입력2에 공백을 없앤 결과는 {{ result2 + "님!"}}이다.
+        </div>
+    </div>
+
+    <script>
+        const {createApp} = Vue;
+        createApp({
+            data(){
+                return {msg : "",
+                        result1 : "",
+                        result2 : ""
+                }
+            }
+        }).mount("#app");
+    </script>
+</body>
+</html>
