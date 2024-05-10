@@ -35,7 +35,7 @@
         </div>
         <hr>
         <div v-for="mem in memberlist">
-            <label><input type="radio" :value="mem" v-model="msg5" />{{mem}}</label>
+            <label><input type="radio" :value="mem" v-model="msg5" />{{mem}}</label> <!--반복을 돌리기 때문에 v-bind의 생략표현인 :value-->
         </div>
             결과 : {{msg5}}
     </div>
