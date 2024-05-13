@@ -7,11 +7,14 @@
             <!--부모로부터 받아온 함수 호출해주고, index넘겨주기-->
         </ul>
     </div>
+    <div>
+        <button @click="setMode(MODE.WRITE)">메모추가</button>
+    </div>
     <footer-component></footer-component>
 </template>
 
 <script>
-    
+    import {MODE} from '../common' 
 
     export default {
         props : { //부모의 데이터를 받아올 때는 porps라는 프로퍼티로 받아오기. 
@@ -22,8 +25,17 @@
 
             setReadMemo : { //app에서 넘겨준 메서드를 여기서 등록해주기
                 type : Function
-            }
+            },
 
+            setMode : {
+                type : Function
+            }
+        },
+
+        computed : {
+            MODE(){
+            return MODE; 
+            }
         }
     }
 </script>
