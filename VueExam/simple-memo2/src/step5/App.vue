@@ -5,7 +5,7 @@
   <hr>
   <div id="app">
     <list-page v-if="mode == MODE.LIST" :list="list" :setReadMemo="setReadMemo" :setMode="setMode"></list-page> <!--list에게 setReadMemo라는 함수 넘겨주기-->
-    <read-page v-if="mode == MODE.READ" :current-memo="selectedMemo" :setmode="setMode"></read-page>  <!--이렇게하고나서 뒤로가기하면안됨. 페이지이동한게 아니기 때문-->
+    <read-page v-if="mode == MODE.READ" :current-memo="selectedMemo" :setMode="setMode"></read-page>  <!--이렇게하고나서 뒤로가기하면안됨. 페이지이동한게 아니기 때문-->
     <write-page v-if="mode == MODE.WRITE" :addMemo="addMemo" :setMode="setMode"></write-page>
   </div>
 </template>

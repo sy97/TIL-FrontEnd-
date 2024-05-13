@@ -21,7 +21,7 @@
                 default : ""
             },
 
-            setmode : { 
+            setMode : { 
                 type : Function
             }
         },
