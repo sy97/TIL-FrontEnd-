@@ -4,12 +4,12 @@
   </div>
   <hr>
   <div id="app">
-    <list-page></list-page>
+    <list-page :list="list"></list-page> <!--v-bind:list인데 v-bind는 생략가능 --> 
   </div>
 </template>
 
 <script>
-import ListPage from '../step1/pages/ListPage.vue'
+import ListPage from '../step2/pages/ListPage.vue'
 
 
 export default {
