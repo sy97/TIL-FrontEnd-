@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>자식에서 부모로 데이터 보내기</h1>
+  <parent-component></parent-component>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ParentComponent from './components/ParentComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ParentComponent
   }
 }
 </script>
