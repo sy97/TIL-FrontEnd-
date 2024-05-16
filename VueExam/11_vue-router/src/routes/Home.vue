@@ -1,7 +1,7 @@
 <template>
     <h1>Home</h1>
     <router-link to="/about">About</router-link>
-</template>
+</template>0
 
 <script>
     export default {
