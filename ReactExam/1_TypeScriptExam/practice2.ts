@@ -45,3 +45,37 @@ const inter : {name:String, age:number} & {height:number, weight:number} = { //�
 //1.typealias
 type NUM = number // number라는 타입의 별명을 NUM으로 짓겠다.
 
+let num1 : NUM = 1; //이렇게 별명으로 쓰기 가능.
+let num3 : number =2; 
+
+type unionType = number | string | string[]; //숫자, 문자, 문자열배열도 사용가능하게.
+
+function printValue2(value: unionType) : void{ //그럼 이렇게 간단하게 가능.
+    console.log(value); 
+}
+
+type info1 = {name:String, age:number};
+type info2 = {height:number, weight:number};
+type info3 = info1 & info2
+
+const inter2 : info3 = { //이렇게 간단하게 가능.
+    age : 20,
+    height : 170,
+    weight : 70,
+    name : "John"
+}
+
+//2.interface
+interface IUser {
+    age : number,
+    height : number,
+    weight : number,
+    name : string
+}
+
+const user1 : IUser = { //인터페이스를 이렇게 사용 가능.
+    age : 20,
+    height : 170,
+    weight : 70,
+    name : "John"
+}
