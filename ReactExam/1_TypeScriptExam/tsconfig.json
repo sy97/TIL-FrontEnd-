@@ -1,0 +1,7 @@
+//키와 값으로 이루어진 형식
+{
+    "compilerOptions": {
+        "noEmitOnError": true ,//ts파일에서 타입오류같은게 있을 시, 에러가 나고 컴파일이 되지 않음.
+        "strictNullChecks": true //엄격하게 null값을 체크하겠다.
+    }
+}
