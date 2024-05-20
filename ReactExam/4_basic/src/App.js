@@ -59,13 +59,20 @@ function App() {
         <hr/>
       </div>
 
-      <div className='modal'>
-        <h2>제목</h2>
-        <p>날짜</p>
-        <p>상세 내용</p>
-      </div>
+      <Modal></Modal>
     </div>
   );
+}
+
+//컴포넌트 만들 때는 반드시 첫글자는 대문자.
+function Modal() {
+  return(
+  <div className='modal'>
+    <h2>제목</h2>
+    <p>날짜</p>
+    <p>상세 내용</p>
+  </div>
+);
 }
 
 //이걸 index.html로 던져줘야, index.html에 보임. 
