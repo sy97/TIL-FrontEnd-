@@ -73,7 +73,7 @@ const App4:React.FC = () => {
             {
                 state.items.map((item:any)=>( 
                     <Checkbox name={item.name} price={item.price} 
-                    isChecked={true} onChange={()=>{changeHandler(item.name)}}/>
+                    isChecked={state[item.name]} onChange={()=>{changeHandler(item.name)}}/>
                 )) 
                 //item의 개수만큼 map 함수를 호출 ()에는 함수처리, 매개변수(item)
                 
