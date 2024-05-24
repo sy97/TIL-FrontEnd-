@@ -1,33 +1,69 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import Square from './Square';
 import './Board.css'
 
-export default class Board extends Component {
-    renderSquare(i){ //몇번째 버튼이 눌렸는지 확인해야하기 때문에 index를 받기
-        return <Square/>
-    }
-    render(){
-        return(
-            <div>
-            <div>Next Player : X, O</div>
-            <div>
-                {this.renderSquare(0)}
-                {this.renderSquare(1)}
-                {this.renderSquare(2)}
-            </div>
-            <div>
-                {this.renderSquare(3)}
-                {this.renderSquare(4)}
-                {this.renderSquare(5)}
-            </div>
-            <div>
-                {this.renderSquare(6)}
-                {this.renderSquare(7)}
-                {this.renderSquare(8)}
-            </div>
-            </div>
-        )
-    }
-}
-//jsx에서는 반드시 하나의 root만 가지고있어야하기 때문에 square세개를 div하나로 묶어줘야함.
+const Board = () => { 
+    const [squares, setSquares] = useState(Array(9).fill(null))
+    const [xIsNext, setXIsNext] = useState(true);
 
+    const calculateWinner = (squ) => {
+        const lines = [
+            [0,1,2], [3,4,5], [6,7,8],
+            [0,3,6], [1,4,7], [2,5,8],
+            [0,4,8], [2,4,6]
+        ]
+
+        for(let index=0; index < lines.length; index++){
+            const [a, b, c] = lines[index];
+            if(squ[a] === squ[b] && squ[a] === squ[c]){
+                return squ[a];
+            }
+        }
+    }
+
+    const winner = calculateWinner(squares);
+
+    let status;
+    if(winner){
+        status = 'Winner : ' + winner;
+    }
+
+    else {
+        status =   `Next Player : ${xIsNext ? 'X' : 'O'}`;
+    }
+
+    const handleClick = (i) => {
+        const newSquares = squares.slice(); 
+        newSquares[i] = xIsNext ? 'X' : 'O'; 
+        setSquares(newSquares);
+        setXIsNext(!xIsNext)
+    }
+    
+    const renderSquare = (i) => { 
+        return <Square value={squares[i]} onClick={()=>{handleClick(i)}} />
+    }
+
+    return (
+        <div>
+            <div className='status'>{status}</div>
+            <div>
+                {renderSquare(0)}
+                {renderSquare(1)}
+                {renderSquare(2)}
+            </div>
+            <div>
+                {renderSquare(3)}
+                {renderSquare(4)}
+                {renderSquare(5)}
+            </div>
+            <div>
+                {renderSquare(6)}
+                {renderSquare(7)}
+                {renderSquare(8)}
+            </div>
+        </div>
+    )
+    
+}
+
+export default Board;
