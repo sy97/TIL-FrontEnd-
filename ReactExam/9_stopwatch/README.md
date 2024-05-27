@@ -8,7 +8,7 @@
 -   [*] Laps 만들기
 
 [ ] Hooks 만들기
--   [ ] 상태 추가 : seconds, status, laps
+-   [*] 상태 추가 : seconds, status, laps
 -   [ ] 파생 상태 추가 : nextLap
 -   [ ] 로직 추가 : start, stop, reset, record
 

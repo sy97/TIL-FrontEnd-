@@ -1,13 +1,13 @@
 import * as React from 'react';
+import { INTERVAL, MILLISEC_PER_SECONDS } from '../constants';
 
-
-enum STATUS { //열거형이므로 enum으로 지정
+export enum STATUS { //열거형이므로 enum으로 지정, 다른데서 쓸 수 있도록 export해줘야함.
     PROCESSING,
     STOP
 }
 
 //Interface앞에는 I를붙여주는게 관례
-interface ILap{ //랩 부분
+export interface ILap{ //랩 부분
     id : number; //순서 숫자? 
     title : string; //'랩'이라고 써질부분
     seconds : number; //숫자
@@ -25,7 +25,7 @@ interface IUseStopwatchReturnType{
     laps : any;
 }
 
-const useStopwatch = () =>{
+const useStopwatch = () =>{ 
     const [seconds, setSeoconds] = React.useState(0);
     const [status, setStatus] = React.useState(STATUS.PROCESSING); 
     const [laps, setLaps] = React.useState<ILap[]>([]);
@@ -35,8 +35,10 @@ const useStopwatch = () =>{
     const reset = React.useCallback(()=>{}, []);
     const record = React.useCallback(()=>{}, []);
 
-    return{
+    window.setInterval(()=>{}, INTERVAL); //함수가 시간을 계속 뿌려주는 함수이어야함. 
 
+    return{
+        seconds, status, laps, start, stop, reset, record
     };
 }
 
