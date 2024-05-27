@@ -57,7 +57,7 @@ function App() {
       setXIsNext((step%2) === 0); 
     }
     return(
-      <li>
+      <li key={move}>
         <button className='move-button' onClick={()=>jumpTo(move)}>{desc}</button> 
       </li>
     );

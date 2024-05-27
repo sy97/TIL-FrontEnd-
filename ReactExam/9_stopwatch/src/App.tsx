@@ -1,11 +1,8 @@
 import React from 'react';
+import Stopwatch from './Stopwatch';
 
 function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+  return <Stopwatch/>;
 }
 
 export default App;

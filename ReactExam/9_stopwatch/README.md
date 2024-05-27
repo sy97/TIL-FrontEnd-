@@ -2,10 +2,10 @@
 
 ## TODO
 
-[ ] View 만들기
--   [ ] Time 만들기
--   [ ] Controllers 만들기
--   [ ] Laps 만들기
+[*] View 만들기
+-   [*] Time 만들기
+-   [*] Controllers 만들기
+-   [*] Laps 만들기
 
 [ ] Hooks 만들기
 -   [ ] 상태 추가 : seconds, status, laps
