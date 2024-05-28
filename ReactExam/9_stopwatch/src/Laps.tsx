@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ILap } from './hooks/useStopwatch';
+import styled from '@emotion/styled';
 
 interface IPorps {
     nextLap : ILap; //가장 위에 있는 랩, 아직 기록되지않은 현재 진행중인 랩
@@ -11,13 +12,44 @@ interface IPorps {
 const Laps : React.FC<IPorps> = ({nextLap, laps}) => {
     return (
         <div>
-            <div>{nextLap.title} with {nextLap.seconds}</div>
+            <Box>
+                <span>{nextLap.title} </span> 
+                <span>{nextLap.lapTime}</span>
+            </Box>
             {
-                laps.map((lap)=>{return <div key={lap.id}>
-                    {lap.title} with {lap.seconds}
-                    </div>})
+                laps.map(
+                    (lap)=>{
+                        return (
+                            <div key={lap.id}>
+                            <Box>
+                            <span>{lap.title}</span>
+                            <span>{lap.lapTime}</span>
+                            </Box>
+                        </div>
+                        )
+                    }
+                )
             }
         </div>
     );
 }
+
+const Container = styled.div`
+    flex : 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    overflow: auto;
+`
+
+const Box = styled.div`
+    display: flex;
+    color: white;
+    font-size: 24px;
+    padding: 20px;
+    align-items: center;
+    justify-content: space-between;
+`
 export default Laps;
