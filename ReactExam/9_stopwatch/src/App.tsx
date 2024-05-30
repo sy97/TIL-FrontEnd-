@@ -18,5 +18,6 @@ const Container = styled.div`
   left : 50%;
   right : 50%;
   translate : translate(-50%, -50%)
+  
 `
 export default App;
