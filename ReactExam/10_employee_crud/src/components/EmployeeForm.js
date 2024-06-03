@@ -1,8 +1,8 @@
 import axios from "../api/axios";
 import {useEffect, useState} from 'react';
 
-const EmployeeForm = () =>{
-
+const EmployeeForm = () =>{ 
+//employeelist에 있는 fetchemployess를 부모가 props로 employeeform에 전달해줌.
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
